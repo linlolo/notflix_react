@@ -9,10 +9,10 @@ export default function Home() {
             <p>Welcome to the NotFlix Administrative Control System.
                 What would you like to do today?</p>
             <Link to="/customers">
-                <button>Manage Customers and Subscriptions</button>
+                <button className="textNavButton">Manage Customers and Subscriptions</button>
             </Link>
             <Link to="/content">
-                <button>Manage Series and Episodes</button>
+                <button className="textNavButton">Manage Series and Episodes</button>
             </Link>
         </div>
     );

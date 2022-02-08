@@ -10,6 +10,8 @@ import {
 
 import Home from "./Pages/Home";
 import Customers from "./Pages/Customers";
+// import NewCustomerForm from "./Pages/NewCustomerForm";
+// import Customer from "./Pages/Customer";
 import Content from "./Pages/Content";
 
 function App() {
@@ -30,14 +32,15 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/customers">
-            <Customers />
-          </Route>
-          <Route path="/content">
-            <Content />
-          </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/" element={<App />}>
+            <Route index element={<Home />} />
+            <Route path="customers" element={<Customers />}>
+              <Route path="new" element={<NewCustomerForm />} />
+              <Route path=":customerID" element={<Customer />} />
+            </Route>
+            <Route path="/content">
+              <Content />
+            </Route>
           </Route>
         </Routes>
       </header>
