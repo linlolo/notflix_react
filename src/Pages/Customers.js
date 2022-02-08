@@ -1,6 +1,7 @@
 import '../App.css';
 import React from "react";
 import {Link} from "react-router-dom";
+import {GrTrash, GrEdit} from "react-icons/gr";
 
 export default function Customers() {
     return(
@@ -39,6 +40,27 @@ export default function Customers() {
                 </div>
                 <button type="button" className="formButton">SEARCH</button>
             </form>
+            <table>
+                <caption>Search Results:</caption>
+                <thead>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>CustomerID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><GrEdit /></td>
+                        <td><GrTrash /></td>
+                        <td>10792341112</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>email@hello.com</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     );
 }

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Create framework for Home page&#10;&#10;Updated meta and title info on index.html as well.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Mockup Customers.js page&#10;&#10;No functionality yet.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Customers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,7 @@
       <updated>1644267420783</updated>
       <workItem from="1644267426783" duration="192000" />
       <workItem from="1644337236414" duration="5222000" />
-      <workItem from="1644347989855" duration="2357000" />
+      <workItem from="1644347989855" duration="3708000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize React framework for NotFlix front end.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
       <created>1644267565337</created>
@@ -84,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644348683602</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mockup Customers.js page&#10;&#10;No functionality yet.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1644351264907</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1644351264907</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +113,7 @@
     <MESSAGE value="Initialize React framework for NotFlix front end.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Implement main App.js Router&#10;&#10;TODO: Build out Home, Customer Mgmt, and &#10;Content Mgmt sections&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Create framework for Home page&#10;&#10;Updated meta and title info on index.html as well.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create framework for Home page&#10;&#10;Updated meta and title info on index.html as well.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Mockup Customers.js page&#10;&#10;No functionality yet.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Mockup Customers.js page&#10;&#10;No functionality yet.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
   </component>
 </project>
