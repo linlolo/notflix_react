@@ -7,7 +7,7 @@ export default function Customers() {
     return(
         <div className="customers">
             <h2>Customer Management</h2>
-            <Link to="customers/new">
+            <Link to="/customers/new">
                 <button className="textNavButton">Add a New Customer</button>
             </Link>
             <p>~OR~</p>
@@ -36,6 +36,14 @@ export default function Customers() {
                             type="text"
                             id="lastName"
                             name="lastName" />
+                    </label>
+                </div>
+                <div className="formField">
+                    <label>Email:
+                        <input
+                            type="text"
+                            id="email"
+                            name="email" />
                     </label>
                 </div>
                 <button type="button" className="formButton">SEARCH</button>
