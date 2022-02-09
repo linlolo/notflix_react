@@ -17,6 +17,7 @@ import Content from "./Pages/Content";
 function App() {
   return (
     <Router>
+      {/* this part should be changed into a component named linkComponent */}
       <header>
         <nav>
           <ul>
@@ -32,16 +33,13 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<App />}>
-            <Route index element={<Home />} />
+          <Route path="/" element={<App />}> </Route>
+            <Route index element={<Home />}> </Route>
             <Route path="customers" element={<Customers />}>
-              <Route path="new" element={<NewCustomerForm />} />
-              <Route path=":customerID" element={<Customer />} />
+              {/* <Route path="new" element={<NewCustomerForm />} />  */}
+              {/* <Route path=":customerID" element={<Customer />} > */}
             </Route>
-            <Route path="/content">
-              <Content />
-            </Route>
-          </Route>
+            <Route path="/content" element= {<Content />}> </Route>
         </Routes>
       </header>
     </Router>
