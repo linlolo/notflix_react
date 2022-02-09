@@ -9,6 +9,10 @@ export default function Content() {
             <Link to="addSeries">
                 <button type='button'>ADD A NEW SERIES</button>
             </Link>
+            <h2>Episode Management</h2>
+            <Link to="addEpisode">
+                <button type="button">ADD A NEW EPISODE</button>
+            </Link>
         </div>
     );
 }

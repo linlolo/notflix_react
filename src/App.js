@@ -14,6 +14,7 @@ import Customers from "./Pages/Customers";
 // import Customer from "./Pages/Customer";
 import Content from "./Pages/Content";
 import AddSeries  from './Pages/AddSeries';
+import AddEpisode from './Pages/AddEpisode';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             </Route>
             <Route path="content" element= {<Content />}> </Route>
             <Route path="/content/addSeries" element={<AddSeries/>}></Route>
+            <Route path="/content/addEpisode" element={<AddEpisode />}></Route>
         </Routes>
       </header>
     </Router>
