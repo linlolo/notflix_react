@@ -13,6 +13,7 @@ import Customers from "./Pages/Customers";
 // import NewCustomerForm from "./Pages/NewCustomerForm";
 // import Customer from "./Pages/Customer";
 import Content from "./Pages/Content";
+import AddSeries  from './Pages/AddSeries';
 
 function App() {
   return (
@@ -39,7 +40,8 @@ function App() {
               {/* <Route path="new" element={<NewCustomerForm />} />  */}
               {/* <Route path=":customerID" element={<Customer />} > */}
             </Route>
-            <Route path="/content" element= {<Content />}> </Route>
+            <Route path="content" element= {<Content />}> </Route>
+            <Route path="/content/addSeries" element={<AddSeries/>}></Route>
         </Routes>
       </header>
     </Router>
