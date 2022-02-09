@@ -13,10 +13,13 @@ import Customers from "./Pages/Customers";
 // import NewCustomerForm from "./Pages/NewCustomerForm";
 // import Customer from "./Pages/Customer";
 import Content from "./Pages/Content";
+import AddSeries  from './Pages/AddSeries';
+import AddEpisode from './Pages/AddEpisode';
 
 function App() {
   return (
     <Router>
+      {/* this part should be changed into a component named linkComponent */}
       <header>
         <nav>
           <ul>
@@ -32,16 +35,15 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<App />}>
-            <Route index element={<Home />} />
+          <Route path="/" element={<App />}> </Route>
+            <Route index element={<Home />}> </Route>
             <Route path="customers" element={<Customers />}>
-              <Route path="new" element={<NewCustomerForm />} />
-              <Route path=":customerID" element={<Customer />} />
+              {/* <Route path="new" element={<NewCustomerForm />} />  */}
+              {/* <Route path=":customerID" element={<Customer />} > */}
             </Route>
-            <Route path="/content">
-              <Content />
-            </Route>
-          </Route>
+            <Route path="content" element= {<Content />}> </Route>
+            <Route path="/content/addSeries" element={<AddSeries/>}></Route>
+            <Route path="/content/addEpisode" element={<AddEpisode />}></Route>
         </Routes>
       </header>
     </Router>
