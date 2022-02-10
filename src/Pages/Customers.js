@@ -51,16 +51,22 @@ export default function Customers() {
             <table>
                 <caption>Search Results:</caption>
                 <thead>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>CustomerID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
+                    <tr>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <th>CustomerID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><GrEdit /></td>
+                        <td>
+                            <Link to="/customers/10792341112">
+                                <GrEdit />
+                            </Link>
+                        </td>
                         <td><GrTrash /></td>
                         <td>10792341112</td>
                         <td>John</td>
