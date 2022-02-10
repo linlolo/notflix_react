@@ -7,7 +7,7 @@ export default function Content() {
     return (
         <div className="content">
             <h2>Series Management</h2>
-            <Link to="series/new">
+            <Link to="/series/new">
                 <button type='button'>ADD A NEW SERIES</button>
             </Link>
             <p>~OR~</p>
@@ -71,7 +71,7 @@ export default function Content() {
                 </tbody>
             </table>
             <h2>Episode Management</h2>
-            <Link to="episodes/new">
+            <Link to="/episodes/new">
                 <button type="button">ADD A NEW EPISODE</button>
             </Link>
             <p>~OR~</p>
@@ -117,7 +117,11 @@ export default function Content() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><GrEdit /></td>
+                        <td>
+                            <Link to="/episodes/10925472891">
+                                <GrEdit />
+                            </Link>
+                        </td>
                         <td><GrTrash /></td>
                         <td>10925472891</td>
                         <td>The Child</td>
