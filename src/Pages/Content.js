@@ -13,6 +13,43 @@ export default function Content() {
             <Link to="addEpisode">
                 <button type="button">ADD A NEW EPISODE</button>
             </Link>
+            <form className="episodeSearchForm">
+                <h3>Search for Episodes</h3>
+                <p>Leaving fields blank will return all episodes.</p>
+                <div className="formField">
+                    <label>Search by Series ID: 
+                        <input
+                            type="text"
+                            id="seriesID"
+                            name="seriesID" />
+                    </label>
+                </div>
+                <div className="formField">
+                    <label>Search by Title: 
+                        <input
+                            type="text"
+                            id="title"
+                            name="title" />
+                    </label>
+                </div>
+                <div className="formField">
+                    <label>Search by ContentRating: 
+                        <input
+                            type="text"
+                            id="contentRating"
+                            name="contentRating" />
+                    </label>
+                </div>
+                <div className="formField">
+                    <label>Search by Genre:  
+                        <input
+                            type="text"
+                            id="genre"
+                            name="genre" />
+                    </label>
+                </div>
+                <button type="button" className="formButton">SEARCH</button>
+            </form>
         </div>
     );
 }
