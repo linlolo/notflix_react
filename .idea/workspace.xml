@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Added Edit Customer and Edit Series pages.&#10;&#10;Updated links to be more consistently-named&#10;and RESTful-ready in App.js&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
-      <change afterPath="$PROJECT_DIR$/src/Pages/EditEpisode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-    </list>
+    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Added EditEpisode.js file&#10;&#10;Double-checked links for functionality.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +62,7 @@
       <workItem from="1644267426783" duration="192000" />
       <workItem from="1644337236414" duration="5222000" />
       <workItem from="1644347989855" duration="7586000" />
-      <workItem from="1644508018335" duration="6604000" />
+      <workItem from="1644508018335" duration="6898000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize React framework for NotFlix front end.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
       <created>1644267565337</created>
@@ -124,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644513383001</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added EditEpisode.js file&#10;&#10;Double-checked links for functionality.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1644517544377</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1644517544377</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +154,7 @@
     <MESSAGE value="Added 'AddCustomers' page.&#10;&#10;Fixed routing on App.js page.&#10;Added Email field on Customers.js under search.&#10;&#10;TODO: Consider breaking pages into smaller components and using &#10;&lt;Outlet /&gt; elements from react-router-dom?&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Added Search for Series form.&#10;&#10;Also created dummy &quot;search results&quot; tables.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Added Edit Customer and Edit Series pages.&#10;&#10;Updated links to be more consistently-named&#10;and RESTful-ready in App.js&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Edit Customer and Edit Series pages.&#10;&#10;Updated links to be more consistently-named&#10;and RESTful-ready in App.js&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Added EditEpisode.js file&#10;&#10;Double-checked links for functionality.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added EditEpisode.js file&#10;&#10;Double-checked links for functionality.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
   </component>
 </project>
