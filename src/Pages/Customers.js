@@ -7,7 +7,7 @@ export default function Customers() {
     return(
         <div className="customers">
             <h2>Customer Management</h2>
-            <Link to="/customers/new">
+            <Link to="new">
                 <button className="textNavButton">Add a New Customer</button>
             </Link>
             <p>~OR~</p>
@@ -63,7 +63,7 @@ export default function Customers() {
                 <tbody>
                     <tr>
                         <td>
-                            <Link to="/customers/10792341112">
+                            <Link to="10792341112">
                                 <GrEdit />
                             </Link>
                         </td>

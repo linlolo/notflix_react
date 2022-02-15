@@ -21,11 +21,11 @@ function AddEpisode(){
                     name="Release Date"/>
                     <label>Previous Episode:</label>
                     <select name="Previous Episode" id="previousEpisode">
-                        <option name="option from DB here"></option>
+                        <option name="option from DB here"> </option>
                     </select>
                     <label>Next Episode:</label>
                     <select name="Next Episode" id="nextEpisode">
-                        <option name="option from DB here"></option>
+                        <option name="option from DB here"> </option>
                     </select>
                     <label>File Source:</label>
                     <input 
@@ -34,7 +34,7 @@ function AddEpisode(){
                     name="File Source"/>
                     <label>Series:</label>
                     <select name="Series" id="series">
-                        <option name="option from DB here"></option>
+                        <option name="option from DB here"> </option>
                     </select>
                 </form>
             </div>

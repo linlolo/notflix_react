@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Finished with html functionality&#10;&#10;TODO: a little CSS&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Subject line (try to keep under 50 characters)&#10;&#10;Multi-line description of commit,&#10;feel free to be detailed.&#10;&#10;[Ticket: X]&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <change afterPath="$PROJECT_DIR$/src/Components/NavBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/Episodes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AddSeries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AddSeries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Series.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +74,9 @@
       <workItem from="1644267426783" duration="192000" />
       <workItem from="1644337236414" duration="5222000" />
       <workItem from="1644347989855" duration="7586000" />
-      <workItem from="1644508018335" duration="9751000" />
+      <workItem from="1644508018335" duration="10336000" />
+      <workItem from="1644521207458" duration="27000" />
+      <workItem from="1644951171711" duration="3025000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize React framework for NotFlix front end.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
       <created>1644267565337</created>
@@ -143,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644517716378</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Test deployment build&#10;&#10;To run similarly on OSU Engr servers:&#10;1) modify package.json to &#10;&quot;homepage&quot; : &quot;https://web.engr.oregonstate.edu/~[YOUR ONID]&quot;&#10;&#10;2) run `npm run build` in the local directory&#10;&#10;3) Upload the contents of the `build` folder&#10;to your public_html folder on the OSU server.&#10;&#10;4) run `npm install -g serve` on your flip server&#10;&#10;5) run `serve -s build`&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1644520651682</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1644520651683</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +184,7 @@
     <MESSAGE value="Added Edit Customer and Edit Series pages.&#10;&#10;Updated links to be more consistently-named&#10;and RESTful-ready in App.js&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Added EditEpisode.js file&#10;&#10;Double-checked links for functionality.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Finished with html functionality&#10;&#10;TODO: a little CSS&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished with html functionality&#10;&#10;TODO: a little CSS&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Test deployment build&#10;&#10;To run similarly on OSU Engr servers:&#10;1) modify package.json to &#10;&quot;homepage&quot; : &quot;https://web.engr.oregonstate.edu/~[YOUR ONID]&quot;&#10;&#10;2) run `npm run build` in the local directory&#10;&#10;3) Upload the contents of the `build` folder&#10;to your public_html folder on the OSU server.&#10;&#10;4) run `npm install -g serve` on your flip server&#10;&#10;5) run `serve -s build`&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test deployment build&#10;&#10;To run similarly on OSU Engr servers:&#10;1) modify package.json to &#10;&quot;homepage&quot; : &quot;https://web.engr.oregonstate.edu/~[YOUR ONID]&quot;&#10;&#10;2) run `npm run build` in the local directory&#10;&#10;3) Upload the contents of the `build` folder&#10;to your public_html folder on the OSU server.&#10;&#10;4) run `npm install -g serve` on your flip server&#10;&#10;5) run `serve -s build`&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
   </component>
 </project>
