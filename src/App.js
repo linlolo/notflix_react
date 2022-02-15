@@ -2,7 +2,7 @@ import './App.css';
 
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
     Routes,
     Route,
     Link
@@ -37,16 +37,15 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<App />}> </Route>
-            <Route index element={<Home />}> </Route>
-            <Route path="customers" element={<Customers />}> </Route>
-            <Route path="/customers/new" element={<AddCustomer />}> </Route>
-            <Route path="customers/:customerID" element={<EditCustomer />} > </Route>
-            <Route path="content" element= {<Content />}> </Route>
-            <Route path="/series/new" element={<AddSeries/>}> </Route>
-            <Route path="/series/:seriesID" element={<EditSeries />}> </Route>
-            <Route path="/episodes/new" element={<AddEpisode />}> </Route>
-            <Route path="/episodes/:episodeID" element={<EditEpisode />}> </Route>
+          <Route path="/" element={<Home />}> </Route>
+          <Route path="/customers" element={<Customers />}> </Route>
+          <Route path="/customers/new" element={<AddCustomer />}> </Route>
+          <Route path="/customers/:customerID" element={<EditCustomer />} > </Route>
+          <Route path="/content" element= {<Content />}> </Route>
+          <Route path="/series/new" element={<AddSeries/>}> </Route>
+          <Route path="/series/:seriesID" element={<EditSeries />}> </Route>
+          <Route path="/episodes/new" element={<AddEpisode />}> </Route>
+          <Route path="/episodes/:episodeID" element={<EditEpisode />}> </Route>
         </Routes>
         {/* There's a way to do this with nested routes and an <Outlet />
         component, but we'd need to do a little restructuring... EJ */}
