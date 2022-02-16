@@ -6,8 +6,9 @@ export default function EditSubscription() {
     return(
         <div>
             <h3>Edit Subscription:</h3>
+            <p>Note: SubscriptionID cannot be changed.</p>
             <SubscriptionForm />
-            <button className="button">SUBMIT</button>
+            <button className="button">UPDATE SUBSCRIPTION</button>
         </div>
     );
 }

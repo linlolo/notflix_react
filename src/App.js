@@ -10,7 +10,6 @@ import {
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import Customers from "./Pages/Customers";
-import AddCustomer from "./Pages/AddCustomer";
 import EditCustomer from "./Pages/EditCustomer";
 import Series from "./Pages/Series";
 import AddSeries  from './Pages/AddSeries';
@@ -31,7 +30,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}> </Route>
           <Route path="/customers" element={<Customers />}> </Route>
-          <Route path="/customers/new" element={<AddCustomer />}> </Route>
           <Route path="/customers/:customerID" element={<EditCustomer />} > </Route>
           <Route path="/series" element= {<Series />}> </Route>
           <Route path="/series/new" element={<AddSeries/>}> </Route>
