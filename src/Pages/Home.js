@@ -7,13 +7,7 @@ export default function Home() {
         <div className="home">
             <h1>NotFlix</h1>
             <p>Welcome to the NotFlix Administrative Control System.
-                What would you like to do today?</p>
-            <Link to="customers">
-                <button className="textNavButton">Manage Customers and Subscriptions</button>
-            </Link>
-            <Link to="content">
-                <button className="textNavButton">Manage Series and Episodes</button>
-            </Link>
+                Please select one of the links above.</p>
         </div>
     );
 }

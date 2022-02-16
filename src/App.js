@@ -4,51 +4,48 @@ import React from "react";
 import {
   HashRouter as Router,
     Routes,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
+import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import Customers from "./Pages/Customers";
-import AddCustomer from "./Pages/AddCustomer";
 import EditCustomer from "./Pages/EditCustomer";
-import Content from "./Pages/Content";
-import AddSeries  from './Pages/AddSeries';
+import Series from "./Pages/Series";
 import EditSeries from "./Pages/EditSeries";
-import AddEpisode from './Pages/AddEpisode';
+import Episodes from "./Pages/Episodes";
 import EditEpisode from './Pages/EditEpisode';
+import Subscriptions from "./Pages/Subscriptions";
+import EditSubscription from "./Pages/EditSubscription";
+import Genres from "./Pages/Genres";
+import EditGenre from "./Pages/EditGenre";
+import ContentTypes from "./Pages/ContentTypes";
+import EditType from "./Pages/EditType";
+
 
 function App() {
   return (
     <Router>
       {/* this part should be changed into a component named linkComponent */}
       <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/customers">Customer Management</Link>
-            </li>
-            <li>
-              <Link to="/content">Content Management</Link>
-            </li>
-          </ul>
-        </nav>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />}> </Route>
           <Route path="/customers" element={<Customers />}> </Route>
-          <Route path="/customers/new" element={<AddCustomer />}> </Route>
           <Route path="/customers/:customerID" element={<EditCustomer />} > </Route>
-          <Route path="/content" element= {<Content />}> </Route>
-          <Route path="/series/new" element={<AddSeries/>}> </Route>
+          <Route path="/series" element= {<Series />}> </Route>
           <Route path="/series/:seriesID" element={<EditSeries />}> </Route>
-          <Route path="/episodes/new" element={<AddEpisode />}> </Route>
+          <Route path="/episodes" element={<Episodes />}> </Route>
           <Route path="/episodes/:episodeID" element={<EditEpisode />}> </Route>
+          <Route path="/subscriptions" element={<Subscriptions />}> </Route>
+          <Route path="/subscriptions/:subscriptionID" element={<EditSubscription />}> </Route>
+          <Route path="/genres" element={<Genres />}> </Route>
+          <Route path="/genres/:genreID" element={<EditGenre />}> </Route>
+          <Route path="/types" element={<ContentTypes />}> </Route>
+          <Route path="/types/:typeID" element={<EditType />}> </Route>
         </Routes>
-        {/* There's a way to do this with nested routes and an <Outlet />
-        component, but we'd need to do a little restructuring... EJ */}
+        {/* There's a way to do this with nested routes and <Outlet />
+        components, but we'd need to do a little restructuring... EJ */}
       </header>
     </Router>
   );
