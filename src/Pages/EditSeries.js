@@ -1,3 +1,4 @@
+import "../App.css";
 import React from "react";
 import SeriesForm from "../Components/SeriesForm";
 // page to edit an existing Series.

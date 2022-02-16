@@ -12,12 +12,13 @@ import Home from "./Pages/Home";
 import Customers from "./Pages/Customers";
 import EditCustomer from "./Pages/EditCustomer";
 import Series from "./Pages/Series";
-import AddSeries  from './Pages/AddSeries';
 import EditSeries from "./Pages/EditSeries";
 import Episodes from "./Pages/Episodes";
 import EditEpisode from './Pages/EditEpisode';
 import Subscriptions from "./Pages/Subscriptions";
 import EditSubscription from "./Pages/EditSubscription";
+import Genres from "./Pages/Genres";
+import EditGenres from "./Pages/EditGenres";
 
 
 function App() {
@@ -31,12 +32,13 @@ function App() {
           <Route path="/customers" element={<Customers />}> </Route>
           <Route path="/customers/:customerID" element={<EditCustomer />} > </Route>
           <Route path="/series" element= {<Series />}> </Route>
-          <Route path="/series/new" element={<AddSeries/>}> </Route>
           <Route path="/series/:seriesID" element={<EditSeries />}> </Route>
           <Route path="/episodes" element={<Episodes />}> </Route>
           <Route path="/episodes/:episodeID" element={<EditEpisode />}> </Route>
           <Route path="/subscriptions" element={<Subscriptions />}> </Route>
           <Route path="/subscriptions/:subscriptionID" element={<EditSubscription />}> </Route>
+          <Route path="/genres" element={<Genres />}> </Route>
+          <Route path="/genres/:genreID" element={<EditGenres />}> </Route>
         </Routes>
         {/* There's a way to do this with nested routes and <Outlet />
         components, but we'd need to do a little restructuring... EJ */}
