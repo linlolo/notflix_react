@@ -18,7 +18,9 @@ import EditEpisode from './Pages/EditEpisode';
 import Subscriptions from "./Pages/Subscriptions";
 import EditSubscription from "./Pages/EditSubscription";
 import Genres from "./Pages/Genres";
-import EditGenres from "./Pages/EditGenres";
+import EditGenre from "./Pages/EditGenre";
+import ContentTypes from "./Pages/ContentTypes";
+import EditType from "./Pages/EditType";
 
 
 function App() {
@@ -38,7 +40,9 @@ function App() {
           <Route path="/subscriptions" element={<Subscriptions />}> </Route>
           <Route path="/subscriptions/:subscriptionID" element={<EditSubscription />}> </Route>
           <Route path="/genres" element={<Genres />}> </Route>
-          <Route path="/genres/:genreID" element={<EditGenres />}> </Route>
+          <Route path="/genres/:genreID" element={<EditGenre />}> </Route>
+          <Route path="/types" element={<ContentTypes />}> </Route>
+          <Route path="/types/:typeID" element={<EditType />}> </Route>
         </Routes>
         {/* There's a way to do this with nested routes and <Outlet />
         components, but we'd need to do a little restructuring... EJ */}
