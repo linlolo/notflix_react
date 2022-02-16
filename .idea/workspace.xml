@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Update Customer functionality to match Subscriptions&#10;&#10;Reworked Search/Edit form and Table components.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
-      <change afterPath="$PROJECT_DIR$/src/Components/EpisodeForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/EpisodeTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/EditEpisode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/EditEpisode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Episodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Episodes.js" afterDir="false" />
+    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Update Episode functionality to match Customers&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <change afterPath="$PROJECT_DIR$/src/Components/SeriesForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/SeriesTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AddEpisode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/EditSeries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/EditSeries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Series.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Series.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
       <workItem from="1644508018335" duration="10336000" />
       <workItem from="1644521207458" duration="27000" />
       <workItem from="1644951171711" duration="7500000" />
-      <workItem from="1645021603233" duration="2327000" />
+      <workItem from="1645021603233" duration="3415000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize React framework for NotFlix front end.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
       <created>1644267565337</created>
@@ -176,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645022878106</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Update Episode functionality to match Customers&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1645024064192</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1645024064192</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +217,7 @@
     <MESSAGE value="Revised Nav scheme for Customer/series/Episode&#10;&#10;Switched to separate pages for Customers / Series / Episodes&#10;and revised navbar and routes accordingly.&#10;&#10;TODO: Add pages for Genres, Subscriptions, and ContentTypes.&#10;TODO: Revise Home page to match when complete.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Implemented revised navigation plan on Subscriptions&#10;&#10;Changed Subscriptions and EditSubscription to reflect&#10;a different method of handling rendering / navigation.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Update Customer functionality to match Subscriptions&#10;&#10;Reworked Search/Edit form and Table components.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Customer functionality to match Subscriptions&#10;&#10;Reworked Search/Edit form and Table components.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Update Episode functionality to match Customers&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Episode functionality to match Customers&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
   </component>
 </project>
