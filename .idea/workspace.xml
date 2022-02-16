@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Add Genre functionality.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
-      <change afterPath="$PROJECT_DIR$/src/Components/ContentTypesForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ContentTypesTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/ContentTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/EditType.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/EditGenres.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/EditGenre.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +38,14 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="EJLada" />
+        <option name="repository" value="notflix_react" />
+      </RepoCoordinatesHolder>
+    </option>
   </component>
   <component name="ProjectId" id="24nXegytxN9WfMOMkEseeAKilqu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

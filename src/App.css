@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+/*
+
+Placed in <head> of index.html:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@600&display=swap" rel="stylesheet">
+
+font-family: 'Lato', sans-serif;    // Use for most text
+font-family: 'Oswald', sans-serif;  // Use for "logo"
+ */
+
+:root {
+  --dark-bkgd: #005f73;
+  --light-bkgd: #e9d8a6;
+  --dark-txt: #001219;
+  --link-unvisited: #0a9396;
+  --link-visited: #005f73;
+  --highlight: #94d2bd;
+  --alert: #9b2226;
+  --pop: #bb3e03;
+  --contrast: #ee9b00;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background-color: var(--light-bkgd);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  font-family: 'Lato', sans-serif;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--dark-txt);
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  width: 100%;
+  padding: 2% 0 2% 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  position: fixed;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  background-color: var(--highlight);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
+
+nav ul {
+  display: inline;
+  flex-basis: border-box;
+}
+
+nav ul li {
+  display: inline;
+  flex-basis: border-box;
+  padding: 0 1rem;
+}
+
+nav ul.navLeft {
+  font-family: 'Oswald', sans-serif;
+}
+
+nav a:link {
+  text-decoration: none;
+  color: var(--dark-txt);
+}
+
+nav a:visited {
+  text-decoration: none;
+  color: var(--dark-txt);
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: var(--dark-txt);
+}
+
+nav a:active {
+  text-decoration: none;
+  color: var(--dark-txt);
+}
+
+#logo {
+  color: var(--pop);
+  font-size: calc(16px + 2.5vmin);
+}
+
+.page {
+  margin: 2rem auto;
+  width: 90%;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  color: var(--pop);
+}
+
+
