@@ -15,7 +15,6 @@ import Series from "./Pages/Series";
 import AddSeries  from './Pages/AddSeries';
 import EditSeries from "./Pages/EditSeries";
 import Episodes from "./Pages/Episodes";
-import AddEpisode from './Pages/AddEpisode';
 import EditEpisode from './Pages/EditEpisode';
 import Subscriptions from "./Pages/Subscriptions";
 import EditSubscription from "./Pages/EditSubscription";
@@ -35,7 +34,6 @@ function App() {
           <Route path="/series/new" element={<AddSeries/>}> </Route>
           <Route path="/series/:seriesID" element={<EditSeries />}> </Route>
           <Route path="/episodes" element={<Episodes />}> </Route>
-          <Route path="/episodes/new" element={<AddEpisode />}> </Route>
           <Route path="/episodes/:episodeID" element={<EditEpisode />}> </Route>
           <Route path="/subscriptions" element={<Subscriptions />}> </Route>
           <Route path="/subscriptions/:subscriptionID" element={<EditSubscription />}> </Route>
