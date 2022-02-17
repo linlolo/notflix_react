@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Updated Form CSS styling&#10;&#10;TODO: Buttons, Tables&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Customers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Subscriptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Subscriptions.js" afterDir="false" />
-    </list>
+    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Finish Button and Table CSS&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +79,7 @@
       <workItem from="1644521207458" duration="27000" />
       <workItem from="1644951171711" duration="7500000" />
       <workItem from="1645021603233" duration="6205000" />
-      <workItem from="1645128060790" duration="5131000" />
+      <workItem from="1645128060790" duration="5294000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize React framework for NotFlix front end.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
       <created>1644267565337</created>
@@ -226,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645132051413</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Finish Button and Table CSS&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1645135113390</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1645135113390</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +267,7 @@
     <MESSAGE value="Nav and Homepage CSS&#10;&#10;TODO: All page-level &lt;div&gt; wrappers should include&#10;classname=&quot;page&quot; for basic styling.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Minor navbar fix&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Updated Form CSS styling&#10;&#10;TODO: Buttons, Tables&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Form CSS styling&#10;&#10;TODO: Buttons, Tables&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Finish Button and Table CSS&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish Button and Table CSS&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
   </component>
 </project>
