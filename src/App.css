@@ -158,6 +158,43 @@ select {
   font-family: 'Lato', sans-serif;
 }
 
+table {
+  width: fit-content;
+  margin: 2rem auto;
+  border: 2px solid var(--pop);
+  border-radius: 2%;
+  font-size: calc(10px + 1vmin);
+}
+
+table caption {
+  font-size: calc(18px + 1vmin);
+  color: var(--pop);
+}
+
+thead{
+  background-color: var(--highlight);
+  border-bottom: 2px solid var(--dark-bkgd);
+}
+
+tr {
+  border-bottom: 1px solid var(--link-visited)
+}
+
+td {
+  padding: 0.25rem 1rem;
+}
+
+button {
+  padding: 0.1rem 0.25rem;
+  margin: 0.2rem 0.25rem;
+  font-size: calc(10px + 1vmin);
+  font-family: 'Lato', sans-serif;
+  border-color: var(--dark-txt);
+  border-radius: 5px;
+  color: var(--dark-txt);
+  background-color: var(--highlight);
+}
+
 
 
 

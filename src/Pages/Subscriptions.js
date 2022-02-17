@@ -8,9 +8,9 @@ export default function Subscriptions() {
         <div className="page">
             <h2>Subscription Management</h2>
             <SubscriptionForm />
-            <button className="textNavButton">Filter Subscriptions</button>
-            <button className="textNavButton">Add New Subscription</button>
-            <button className="textNavButton">Clear All Filters</button>
+            <button className="textNavButton">ADD NEW SUBSCRIPTION</button>
+            <button className="textNavButton">FILTER SUBSCRIPTIONS</button>
+            <button className="textNavButton">CLEAR ALL FILTERS</button>
             <SubscriptionTable />
         </div>
     );

@@ -8,9 +8,9 @@ export default function Customers() {
         <div className="page">
             <h2>Customer Management</h2>
             <CustomerForm />
-            <button className="textNavButton">Add New Customer</button>
-            <button className="textNavButton">Filter Customers</button>
-            <button className="textNavButton">Clear All Filters</button>
+            <button className="textNavButton">ADD NEW CUSTOMER</button>
+            <button className="textNavButton">FILTER CUSTOMERS</button>
+            <button className="textNavButton">CLEAR ALL FILTERS</button>
             <CustomerTable />
         </div>
     );
