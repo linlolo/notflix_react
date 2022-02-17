@@ -7,31 +7,28 @@ export default function SubscriptionForm() {
     return(
         <form>
             <div className="formField">
-                <label>CustomerID:
+                <label for="customerID">CustomerID:</label>
                     <input
                         type="text"
                         id="customerID"
                         name="customerID"
                         value="10792341112" />
-                </label>
             </div>
             <div className="formField">
-                <label>SeriesID:
+                <label for="seriesID">SeriesID:</label>
                     <input
                         type="text"
                         id="seriesID"
                         name="seriesID"
                         value="10846290217" />
-                </label>
             </div>
             <div className="formField">
-                <label>Date Subscribed:
+                <label for="dateSubscribed">Date Subscribed:</label>
                     <input
                         type="date"
                         id="dateSubscribed"
                         name="dateSubscribed"
                         value="2022-02-01"/>
-                </label>
             </div>
         </form>
     );

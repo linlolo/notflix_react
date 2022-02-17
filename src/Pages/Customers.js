@@ -5,7 +5,7 @@ import CustomerTable from "../Components/CustomerTable";
 
 export default function Customers() {
     return(
-        <div className="customers">
+        <div className="page">
             <h2>Customer Management</h2>
             <CustomerForm />
             <button className="textNavButton">Add New Customer</button>

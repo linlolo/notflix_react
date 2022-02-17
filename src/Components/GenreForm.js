@@ -5,22 +5,20 @@ export default function GenreForm() {
     return (
         <form>
             <div className="formField">
-                <label>Genre ID:
+                <label for="genreID">Genre ID:</label>
                     <input
                         type="text"
                         id="genreID"
                         name="genreID"
                         value="17000203001" />
-                </label>
             </div>
             <div className="formField">
-                <label>Genre Name:
+                <label for="genreName">Genre Name:</label>
                     <input
                         type="text"
                         id="genreName"
                         name="genreName"
                         value="Space Western" />
-                </label>
             </div>
         </form>
     );

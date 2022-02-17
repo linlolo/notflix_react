@@ -7,7 +7,7 @@ import SeriesForm from "../Components/SeriesForm";
 
 function EditSeries() {
     return(
-        <div className="editSeries">
+        <div className="page">
             <h3>Edit Series details</h3>
             <p>Note: SeriesID cannot be changed.</p>
             <SeriesForm />

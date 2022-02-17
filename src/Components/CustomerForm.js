@@ -8,40 +8,36 @@ export default function CustomerForm() {
     return (
         <form className="customerSearchForm">
             <div className="formField">
-                <label>Customer ID:
+                <label for="customerID">Customer ID:</label>
                     <input
                         type="text"
                         id="customerID"
                         name="customerID"
                         value="Leave blank to create new Customer"/>
-                </label>
             </div>
             <div className="formField">
-                <label>First Name:
+                <label for="firstName">First Name:</label>
                     <input
                         type="text"
                         id="firstName"
                         name="firstName"
                         value="John" />
-                </label>
             </div>
             <div className="formField">
-                <label>Last Name:
+                <label for="lastName">Last Name:</label>
                     <input
                         type="text"
                         id="lastName"
                         name="lastName"
                         value="Doe" />
-                </label>
             </div>
             <div className="formField">
-                <label>Email:
+                <label for="email">Email:</label>
                     <input
                         type="text"
                         id="email"
                         name="email"
                         value="email@hello.com" />
-                </label>
             </div>
         </form>
     );

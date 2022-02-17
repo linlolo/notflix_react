@@ -109,4 +109,55 @@ h1 {
   font-size: calc(36px + 5vmin);
 }
 
+form {
+  width: fit-content;
+  margin: auto;
+  border: 2px solid var(--contrast);
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.formField {
+  width: 100%;
+  margin: 1% 0;
+  align-items: baseline;
+}
+
+label {
+  display: inline;
+  float: left;
+  width: 12rem;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+input[type=text] {
+  display: inline;
+  margin-right: 1rem;
+  width: 18rem;
+  font-size: calc(10px + 1.5vmin);
+  font-family: 'Lato', sans-serif;
+}
+
+input[type=date] {
+  display: inline;
+  margin-right: 1rem;
+  width: 18rem;
+  font-size: calc(10px + 1.5vmin);
+  font-family: 'Lato', sans-serif;
+}
+
+select {
+  display: inline;
+  margin-right: 1rem;
+  width: 18rem;
+  font-size: calc(10px + 1vmin);
+  font-family: 'Lato', sans-serif;
+}
+
+
+
 

@@ -4,7 +4,7 @@ import GenreForm from "../Components/GenreForm";
 
 export default function EditGenre() {
     return (
-        <div className="editGenres">
+        <div className="page">
             <h3>Edit Genre Details:</h3>
             <p>Note: Genre ID cannot be changed.</p>
             <GenreForm />

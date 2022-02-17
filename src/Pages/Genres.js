@@ -5,7 +5,7 @@ import GenreTable from "../Components/GenreTable";
 
 export default function Genres() {
     return (
-        <div className="genres">
+        <div className="page">
             <h2>Genre Management:</h2>
             <GenreForm />
             <button type='button'>ADD NEW GENRE</button>

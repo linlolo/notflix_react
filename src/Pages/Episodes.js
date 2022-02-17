@@ -5,7 +5,7 @@ import EpisodeTable from "../Components/EpisodeTable";
 
 export default function Episodes() {
     return (
-        <div>
+        <div className="page">
             <h2>Episode Management</h2>
             <EpisodeForm />
             <button type="button">ADD NEW EPISODE</button>

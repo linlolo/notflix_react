@@ -5,7 +5,7 @@ import SubscriptionTable from "../Components/SubscriptionTable";
 
 export default function Subscriptions() {
     return (
-        <div>
+        <div className="page">
             <h2>Subscription Management</h2>
             <SubscriptionForm />
             <button className="textNavButton">Filter Subscriptions</button>

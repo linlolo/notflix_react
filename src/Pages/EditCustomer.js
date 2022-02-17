@@ -6,7 +6,7 @@ import CustomerForm from "../Components/CustomerForm";
 
 function EditCustomer() {
     return(
-        <div className="editCustomer">
+        <div className="page">
             <h3>Edit Customer details</h3>
             <p>NOTE: CustomerID cannot be changed.</p>
             <CustomerForm />

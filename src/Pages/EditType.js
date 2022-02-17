@@ -4,7 +4,7 @@ import ContentTypesForm from "../Components/ContentTypesForm";
 
 export default function EditType() {
     return (
-        <div className="editType">
+        <div className="page">
             <h3>Edit ContentType Details:</h3>
             <p>Note: ContentType ID cannot be changed.</p>
             <ContentTypesForm />

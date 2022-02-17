@@ -5,49 +5,44 @@ export default function ContentTypesForm() {
     return (
         <form>
             <div className="formField">
-                <label>ContentType ID:
+                <label for="contentTypeID">ContentType ID:</label>
                     <input
                         type="text"
                         id="contentTypeID"
                         name="contentTypeID"
                         value="19000010023" />
-                </label>
             </div>
             <div className="formField">
-                <label>Series ID:
+                <label for="seriesID">Series ID:</label>
                     <input
                         type="text"
                         id="seriesID"
                         name="seriesID"
                         value="10846290217" />
-                </label>
             </div>
             <div className="formField">
-                <label>Series Title:
+                <label for="title">Series Title:</label>
                     <input
                         type="text"
                         id="title"
                         name="title"
                         value="The Bandalorian" />
-                </label>
             </div>
             <div className="formField">
-                <label>Genre ID:
+                <label for="genreID">Genre ID:</label>
                     <input
                         type="text"
                         id="genreID"
                         name="genreID"
                         value="17000203001" />
-                </label>
             </div>
             <div className="formField">
-                <label>Genre Name:
+                <label for="genreName">Genre Name:</label>
                     <input
                         type="text"
                         id="genreName"
                         name="genreName"
                         value="Space Western" />
-                </label>
             </div>
         </form>
     );

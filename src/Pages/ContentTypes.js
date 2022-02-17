@@ -5,7 +5,7 @@ import ContentTypesTable from "../Components/ContentTypesTable";
 
 export default function ContentTypes() {
     return (
-        <div className="contentTypes">
+        <div className="page">
             <h2>ContentType Management:</h2>
             <ContentTypesForm />
             <button type='button'>ADD NEW CONTENT-TYPE</button>

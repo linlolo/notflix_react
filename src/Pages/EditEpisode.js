@@ -6,7 +6,7 @@ import EpisodeForm from "../Components/EpisodeForm";
 
 function EditEpisode() {
     return(
-        <div className="editEpisode">
+        <div className="page">
             <h3>Edit Episode details</h3>
             <p>Note: EpisodeID cannot be changed.</p>
             <EpisodeForm />

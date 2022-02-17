@@ -4,7 +4,7 @@ import SubscriptionForm from "../Components/SubscriptionForm";
 
 export default function EditSubscription() {
     return(
-        <div>
+        <div className="page">
             <h3>Edit Subscription:</h3>
             <p>Note: SubscriptionID cannot be changed.</p>
             <SubscriptionForm />

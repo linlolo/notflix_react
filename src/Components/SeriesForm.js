@@ -5,24 +5,23 @@ export default function SeriesForm() {
     return(
         <form>
             <div className="formField">
-                <label>Series ID:
+                <label for="seriesID">Series ID:</label>
                     <input
                         type="text"
                         id="seriesID"
                         name="seriesID"
                         value="10846290217" />
-                </label>
-            </div><div className="formField">
-                <label>Title:
+            </div>
+            <div className="formField">
+                <label for="title">Title:</label>
                     <input
                         type="text"
                         id="title"
                         name="title"
                         value="The Bandalorian" />
-                </label>
             </div>
             <div className="formField">
-                <label>Rating:
+                <label for="contentRating">Rating:</label>
                     <select
                         name="Content Rating"
                         id="contentRating">
@@ -32,7 +31,6 @@ export default function SeriesForm() {
                         <option value="R: Restricted"> R: Restricted </option>
                         <option value="NC-17: Adults Only"> NC-17: Adults Only </option>
                     </select>
-                </label>
             </div>
         </form>
     );

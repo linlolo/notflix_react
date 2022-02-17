@@ -5,7 +5,7 @@ import SeriesTable from "../Components/SeriesTable";
 
 export default function Series() {
     return (
-        <div className="series">
+        <div className="page">
             <h2>Series Management</h2>
             <SeriesForm />
             <button type='button'>ADD NEW SERIES</button>
