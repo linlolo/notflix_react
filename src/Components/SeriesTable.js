@@ -1,9 +1,8 @@
 import "../App.css";
 import React from "react";
-import {Link} from "react-router-dom";
 import {GrEdit, GrTrash} from "react-icons/gr";
 
-export default function SeriesTable() {
+export default function SeriesTable({ series }) {
     return (
         <table>
             <caption>Series Results:</caption>
@@ -17,18 +16,21 @@ export default function SeriesTable() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <Link to="10846290217">
-                            <GrEdit />
-                        </Link>
-                    </td>
-                    <td><GrTrash /></td>
-                    <td>10846290217</td>
-                    <td>The Bandalorian</td>
-                    <td>PG-13</td>
-                </tr>
+                {series.map((series, i) => <Series series={series}
+                    key={i} />)}
             </tbody>
         </table>
     );
+}
+
+function Series({ series }) {
+    return (
+        <tr>
+            <td><GrEdit /></td>
+            <td><GrTrash /></td>
+            <td>{series.seriesID}</td>
+            <td>{series.title}</td>
+            <td>{series.rating}</td>
+        </tr>
+    )
 }
