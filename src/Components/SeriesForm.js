@@ -1,28 +1,7 @@
 import "../App.css";
 import React from "react";
-import { useState } from 'react';
 
-export default function SeriesForm() {
-    const [seriesID, setSeriesID] = useState('');
-    const [title, setTitle] = useState('');
-    const [rating, setRating] = useState('');
-
-    const addSeries = async () => {
-        const newSeries = { seriesID, title, rating };
-        const response = await fetch('/series', {
-            method: 'POST',
-            body: JSON.stringify(newSeries),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        if (response.status === 201) {
-            alert("Successfully added the series");
-        } else {
-            alert(`Failed to add series, status code = ${response.status}`);
-        }
-    }
-
+export default function SeriesForm( {series, handleChange} ) {
     return(
         <div>
             <form>
@@ -32,9 +11,9 @@ export default function SeriesForm() {
                             type="text"
                             id="seriesID"
                             name="seriesID"
-                            value={seriesID}
+                            value={series.seriesID}
                             placeholder="10846290217"
-                            onChange={e => setSeriesID(e.target.value)} />
+                            onChange={handleChange} />
                 </div>
                 <div className="formField">
                     <label for="title">Title:</label>
@@ -42,16 +21,16 @@ export default function SeriesForm() {
                             type="text"
                             id="title"
                             name="title"
-                            value={title}
+                            value={series.title}
                             placeholder="The Bandalorian"
-                            onChange={e => setTitle(e.target.value)} />
+                            onChange={handleChange} />
                 </div>
                 <div className="formField">
                     <label for="contentRating">Rating:</label>
                         <select
                             name="Content Rating"
                             id="contentRating"
-                            onChange={e => setRating(e.target.value)}>
+                            onChange={handleChange} >
                             <option value ="G: General Audience" > G: General Audience </option>
                             <option value="PG: Parental Guidance Suggested"> PG: Parental Guidance Suggested </option>
                             <option value="PG13: Parents Strongly Cautioned" selected> PG13: Parental Guidance Strongly Cautioned </option>
@@ -60,9 +39,6 @@ export default function SeriesForm() {
                         </select>
                 </div>
             </form>
-            <button type='button' onClick={addSeries}>ADD NEW SERIES</button>
-            <button type='button'>FILTER SERIES</button>
-            <button type='button'>CLEAR ALL FILTERS</button>
         </div>
         
     );

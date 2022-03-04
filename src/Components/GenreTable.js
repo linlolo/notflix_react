@@ -1,9 +1,8 @@
 import "../App.css";
 import React from "react";
-import {Link} from "react-router-dom";
 import {GrTrash, GrEdit} from "react-icons/gr";
 
-export default function GenreTable() {
+export default function GenreTable( { genres }) {
     return(
         <table>
             <caption>Genre Results:</caption>
@@ -14,17 +13,20 @@ export default function GenreTable() {
                 <th>Genre Name</th>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <Link to="17000203001">
-                            <GrEdit />
-                        </Link>
-                    </td>
-                    <td><GrTrash /></td>
-                    <td>17000203001</td>
-                    <td>Space Western</td>
-                </tr>
+                {genres.map((genre, i) => <Genre genre={genre}
+                        key={i} />)}
             </tbody>
         </table>
+    );
+}
+
+function Genre({ genre }) {
+    return (
+        <tr>
+            <td><GrEdit /></td>
+            <td><GrTrash /></td>
+            <td>{genre.genreID}</td>
+            <td>{genre.name}</td>
+        </tr>
     );
 }

@@ -3,7 +3,8 @@ import React from "react";
 // Same form can be used for add, search, or edit
 // Only pre-populate fields if useParams passes a subscriptionID.
 
-export default function SubscriptionForm() {
+export default function SubscriptionForm({ subscription, handleChange }) {
+    
     return(
         <form>
             <div className="formField">
@@ -12,7 +13,9 @@ export default function SubscriptionForm() {
                         type="text"
                         id="customerID"
                         name="customerID"
-                        value="10792341112" />
+                        value={subscription.customerID}
+                        placeholder="10792341112"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="seriesID">SeriesID:</label>
@@ -20,7 +23,9 @@ export default function SubscriptionForm() {
                         type="text"
                         id="seriesID"
                         name="seriesID"
-                        value="10846290217" />
+                        value={subscription.seriesID}
+                        placeholder="10846290217"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="dateSubscribed">Date Subscribed:</label>
@@ -28,7 +33,9 @@ export default function SubscriptionForm() {
                         type="date"
                         id="dateSubscribed"
                         name="dateSubscribed"
-                        value="2022-02-01"/>
+                        value={subscription.dateSubscribed}
+                        placeholder="2022-02-01"
+                        onChange={handleChange} />
             </div>
         </form>
     );

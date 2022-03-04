@@ -1,9 +1,8 @@
 import "../App.css";
 import React from "react";
-import {Link} from "react-router-dom";
 import {GrEdit, GrTrash} from "react-icons/gr";
 
-export default function EpisodeTable() {
+export default function EpisodeTable( { episodes }) {
     return(
         <table>
             <caption>Episode Results:</caption>
@@ -21,22 +20,25 @@ export default function EpisodeTable() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <Link to="10925472891">
-                            <GrEdit />
-                        </Link>
-                    </td>
-                    <td><GrTrash /></td>
-                    <td>10925472891</td>
-                    <td>159930210041</td>
-                    <td>The Child</td>
-                    <td>2020-11-12</td>
-                    <td>Huckleberry</td>
-                    <td>NULL</td>
-                    <td>chickynuggies.m4a</td>
-                </tr>
+                {episodes.map((episode, i) => <Episode episode={episode}
+                    key={i} />)}
             </tbody>
         </table>
+    );
+}
+
+function Episode({ episode }) {
+    return (
+        <tr>
+            <td><GrEdit /></td>
+            <td><GrTrash /></td>
+            <td>{episode.seriesID}</td>
+            <td>{episode.episodeID}</td>
+            <td>{episode.episodeTitle}</td>
+            <td>{episode.releaseDate}</td>
+            <td>{episode.prevEpisode}</td>
+            <td>{episode.nextEpisode}</td>
+            <td>{episode.fileSource}</td>
+        </tr>
     );
 }

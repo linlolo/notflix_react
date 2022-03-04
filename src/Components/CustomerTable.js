@@ -1,9 +1,6 @@
 import "../App.css";
 import React from "react";
-import {Link} from "react-router-dom";
 import {GrEdit, GrTrash} from "react-icons/gr";
-// Eventually generate rows with a "Customer" component built from
-// query results.
 
 export default function CustomerTable({ customers }) {
     return(

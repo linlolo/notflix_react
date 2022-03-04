@@ -1,7 +1,7 @@
 import "../App.css";
 import React from "react";
 
-export default function GenreForm() {
+export default function GenreForm( { genre, handleChange }) {
     return (
         <form>
             <div className="formField">
@@ -10,7 +10,9 @@ export default function GenreForm() {
                         type="text"
                         id="genreID"
                         name="genreID"
-                        value="17000203001" />
+                        value={genre.genreID}
+                        placeholder="17000203001"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="genreName">Genre Name:</label>
@@ -18,7 +20,9 @@ export default function GenreForm() {
                         type="text"
                         id="genreName"
                         name="genreName"
-                        value="Space Western" />
+                        value={genre.name}
+                        placeholder="Space Western"
+                        onChange={handleChange} />
             </div>
         </form>
     );

@@ -6,10 +6,15 @@ import { useState, useEffect } from 'react';
 
 export default function Customers() {
     const [customers, setCustomers] = useState([]);
-    const [customerID, setCustomerID] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
+    const [customer, setCustomer] = useState({ customerID: "", firstName: "", lastName: "", email: "" });
+
+    const handleChange = e => {
+        const { name, value } = e.target;
+        setCustomer(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
 
     const loadCustomers = async () => {
         const response = await fetch('/customers');
@@ -18,7 +23,7 @@ export default function Customers() {
     }
 
     const addCustomer = async () => {
-        const newCustomer = { customerID, firstName, lastName, email };
+        const newCustomer = customer;
         const response = await fetch('/customers', {
             method: 'POST',
             body: JSON.stringify(newCustomer),
@@ -37,10 +42,10 @@ export default function Customers() {
         loadCustomers();
     }, [])
 
-    return(
+    return (
         <div className="page">
             <h2>Customer Management</h2>
-            <CustomerForm setCustomerID={setCustomerID} setFirstName={setFirstName} setLastName={setLastName} setEmail={setEmail}/>
+            <CustomerForm customer={customer} handleChange={handleChange}/>
             <button className="textNavButton" onClick={addCustomer}>ADD NEW CUSTOMER</button>
             <button className="textNavButton">FILTER CUSTOMERS</button>
             <button className="textNavButton">CLEAR ALL FILTERS</button>
