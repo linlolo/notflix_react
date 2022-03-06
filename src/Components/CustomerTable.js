@@ -1,11 +1,8 @@
 import "../App.css";
 import React from "react";
-import {Link} from "react-router-dom";
 import {GrEdit, GrTrash} from "react-icons/gr";
-// Eventually generate rows with a "Customer" component built from
-// query results.
 
-export default function CustomerTable() {
+export default function CustomerTable({ customers }) {
     return(
         <table>
             <caption>Customer Results:</caption>
@@ -20,19 +17,22 @@ export default function CustomerTable() {
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>
-                    <Link to="10792341112">
-                        <GrEdit />
-                    </Link>
-                </td>
-                <td><GrTrash /></td>
-                <td>10792341112</td>
-                <td>John</td>
-                <td>Doe</td>
-                <td>email@hello.com</td>
-            </tr>
+                {customers.map((customer, i) => <Customer customer={customer}
+                    key={i} />)}
             </tbody>
         </table>
+    );
+}
+
+function Customer({ customer }) {
+    return (
+        <tr>
+            <td><GrEdit /></td>
+            <td><GrTrash /></td>
+            <td>{customer.customerID}</td>
+            <td>{customer.firstName}</td>
+            <td>{customer.lastName}</td>
+            <td>{customer.email}</td>
+        </tr>
     );
 }

@@ -1,7 +1,7 @@
 import "../App.css";
 import React from "react";
 
-export default function ContentTypesForm() {
+export default function ContentTypesForm( { content, handleChange }) {
     return (
         <form>
             <div className="formField">
@@ -10,7 +10,9 @@ export default function ContentTypesForm() {
                         type="text"
                         id="contentTypeID"
                         name="contentTypeID"
-                        value="19000010023" />
+                        value={content.contentTypeID}
+                        placeholder="19000010023"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="seriesID">Series ID:</label>
@@ -18,7 +20,9 @@ export default function ContentTypesForm() {
                         type="text"
                         id="seriesID"
                         name="seriesID"
-                        value="10846290217" />
+                        value={content.seriesID}
+                        placeholder="10846290217"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="title">Series Title:</label>
@@ -26,7 +30,9 @@ export default function ContentTypesForm() {
                         type="text"
                         id="title"
                         name="title"
-                        value="The Bandalorian" />
+                        value={content.title}
+                        placeholder="The Bandalorian"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="genreID">Genre ID:</label>
@@ -34,7 +40,9 @@ export default function ContentTypesForm() {
                         type="text"
                         id="genreID"
                         name="genreID"
-                        value="17000203001" />
+                        value={content.genreID}
+                        placeholder="17000203001"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="genreName">Genre Name:</label>
@@ -42,7 +50,9 @@ export default function ContentTypesForm() {
                         type="text"
                         id="genreName"
                         name="genreName"
-                        value="Space Western" />
+                        value={content.genreName}
+                        placeholder="Space Western"
+                        onChange={handleChange} />
             </div>
         </form>
     );

@@ -1,7 +1,7 @@
 import "../App.css";
 import React from "react";
 
-export default function EpisodeForm() {
+export default function EpisodeForm( {episode, handleChange}) {
     return(
         <form>
             <div className="formField">
@@ -10,7 +10,9 @@ export default function EpisodeForm() {
                         type="text"
                         id="seriesID"
                         name="seriesID"
-                        value="10846290217" />
+                        value={episode.seriesID}
+                        placeholder="10846290217"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="episodeID">Episode ID:</label>
@@ -18,7 +20,9 @@ export default function EpisodeForm() {
                         type="text"
                         id="episodeID"
                         name="episodeID"
-                        value="159930210041" />
+                        value={episode.episodeID}
+                        placeholder="159930210041"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="episodeTitle">Episode Title:</label>
@@ -26,25 +30,29 @@ export default function EpisodeForm() {
                         type="text"
                         id="episodeTitle"
                         name="episodeTitle"
-                        value="The Child" />
+                        value={episode.episodeTitle}
+                        placeholder="The Child"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="releaseDate">Release Date</label>
-                <input
-                    type="date"
-                    id="releaseDate"
-                    name="releaseDate"
-                    value="2020-11-12"/>
+                    <input
+                        type="date"
+                        id="releaseDate"
+                        name="releaseDate"
+                        value={episode.releaseDate}
+                        placeholder="2020-11-12"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="previousEpisode">Previous Episode</label>
-                <select name="previousEpisode" id="previousEpisode">
+                <select name="previousEpisode" id="previousEpisode" onChange={handleChange}>
                     <option name="option from DB here" selected>Huckleberry</option>
                 </select>
             </div>
             <div className="formField">
                 <label for="nextEpisode">Next Episode</label>
-                <select name="nextEpisode" id="nextEpisode">
+                <select name="nextEpisode" id="nextEpisode" onChange={handleChange}>
                     <option name="option from DB here" selected>Null</option>
                 </select>
             </div>
@@ -54,7 +62,8 @@ export default function EpisodeForm() {
                     type="text"
                     id="fileSource"
                     name="fileSource"
-                    value="chickynuggies.m4a"/>
+                    value={episode.fileSource}
+                    placeholder="chickynuggies.m4a" />
             </div>
         </form>
     );

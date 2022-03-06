@@ -1,9 +1,8 @@
 import "../App.css";
 import React from "react";
-import {Link} from "react-router-dom";
 import {GrEdit, GrTrash} from "react-icons/gr";
 
-export default function SubscriptionTable() {
+export default function SubscriptionTable( { subscriptions }) {
     return (
         <div>
             <table>
@@ -22,25 +21,26 @@ export default function SubscriptionTable() {
                 </tr>
                 </thead>
                 <tbody>
-                {/* Eventually we use a map function to generate table rows here
-                 with a "Subscription" component */}
-                    <tr>
-                        <td>
-                            <Link to="10792341112">
-                                <GrEdit />
-                            </Link>
-                        </td>
-                        <td><GrTrash /></td>
-                        <td>20371009228</td>
-                        <td>10792341112</td>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>10846290217</td>
-                        <td>The Bandalorian</td>
-                        <td>2022-02-01</td>
-                    </tr>
+                    {subscriptions.map((subscription, i) => <Subscription subscription={subscription}
+                        key={i} />)}
                 </tbody>
             </table>
         </div>
+    );
+}
+
+function Subscription({ subscription }) {
+    return (
+        <tr>
+            <td><GrEdit /></td>
+            <td><GrTrash /></td>
+            <td>{subscription.subscriptionID}</td>
+            <td>{subscription.customerID}</td>
+            <td>{subscription.firstName}</td>
+            <td>{subscription.lastName}</td>
+            <td>{subscription.seriesID}</td>
+            <td>{subscription.title}</td>
+            <td>{subscription.dateSubscribed}</td>
+        </tr>
     );
 }

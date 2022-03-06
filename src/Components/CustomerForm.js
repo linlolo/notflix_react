@@ -4,7 +4,7 @@ import React from "react";
 // Prepopulate all fields for Edit, otherwise default to empty strings
 // and "Leave blank" note for create new.
 
-export default function CustomerForm() {
+export default function CustomerForm( { customer, handleChange } ) {
     return (
         <form className="customerSearchForm">
             <div className="formField">
@@ -13,7 +13,9 @@ export default function CustomerForm() {
                         type="text"
                         id="customerID"
                         name="customerID"
-                        value="Leave blank to create new Customer"/>
+                        value={customer.customerID}
+                        placeholder="Leave blank to create new Customer"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="firstName">First Name:</label>
@@ -21,7 +23,9 @@ export default function CustomerForm() {
                         type="text"
                         id="firstName"
                         name="firstName"
-                        value="John" />
+                        value={customer.firstName}
+                        placeholder="John"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="lastName">Last Name:</label>
@@ -29,7 +33,9 @@ export default function CustomerForm() {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        value="Doe" />
+                        value={customer.lastName}
+                        placeholder="Doe"
+                        onChange={handleChange} />
             </div>
             <div className="formField">
                 <label for="email">Email:</label>
@@ -37,7 +43,9 @@ export default function CustomerForm() {
                         type="text"
                         id="email"
                         name="email"
-                        value="email@hello.com" />
+                        value={customer.email}
+                        placeholder="email@hello.com"
+                        onChange={handleChange} />
             </div>
         </form>
     );
