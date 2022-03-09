@@ -42,7 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}> </Route>
           <Route path="/customers" element={<Customers setCustomerToEdit={setCustomerToEdit}/>}> </Route>
-          <Route path="/customers/edit-customer" element={<EditCustomer customer={customerToEdit} handleChange={editCustomer} />} > </Route>
+          <Route path="/customers/:customerID" element={<EditCustomer customer={customerToEdit} handleChange={editCustomer} />} > </Route>
           <Route path="/series" element= {<Series />}> </Route>
           <Route path="/series/:seriesID" element={<EditSeries />}> </Route>
           <Route path="/episodes" element={<Episodes />}> </Route>

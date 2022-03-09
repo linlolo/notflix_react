@@ -62,7 +62,8 @@ export default function Customers( {setCustomerToEdit} ) {
 
     const editCustomer = async (customerToEdit) => {
         setCustomerToEdit(customerToEdit);
-        navigate(`/customers/edit-customer`);
+        let url = `/customers/${customerToEdit.customerID}`;
+        navigate(url);
     }
 
     const deleteCustomer = async (_id) => {
