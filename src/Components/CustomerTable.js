@@ -1,34 +1,40 @@
 import "../App.css";
 import React from "react";
 import {GrEdit, GrTrash} from "react-icons/gr";
+import { useHistory } from 'react-router-dom';
 
-export default function CustomerTable({ customers }) {
+export default function CustomerTable({ customers, onDelete, onEdit }) {
+    if (customers === undefined) {
+        return null;
+    }
     return(
         <table>
             <caption>Customer Results:</caption>
             <thead>
-            <tr>
-                <th>Edit</th>
-                <th>Delete</th>
-                <th>CustomerID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-            </tr>
+                <tr>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>CustomerID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
             </thead>
             <tbody>
-                {customers.map((customer, i) => <Customer customer={customer}
-                    key={i} />)}
+                {
+                customers.map((customer, i) => <Customer customer={customer} onDelete={onDelete} onEdit={onEdit}
+                    key={i} />)
+                }
             </tbody>
         </table>
     );
 }
 
-function Customer({ customer }) {
+function Customer({ customer, onDelete, onEdit }) {
     return (
         <tr>
-            <td><GrEdit /></td>
-            <td><GrTrash /></td>
+            <td><GrEdit class='button' onClick={() => onEdit(customer)}/></td>
+            <td><GrTrash class='button' onClick={() => onDelete(customer.customerID)}/></td>
             <td>{customer.customerID}</td>
             <td>{customer.firstName}</td>
             <td>{customer.lastName}</td>

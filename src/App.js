@@ -6,6 +6,7 @@ import {
     Routes,
     Route
 } from "react-router-dom";
+import { useState } from 'react';
 
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
@@ -24,6 +25,15 @@ import EditType from "./Pages/EditType";
 
 
 function App() {
+  const [customerToEdit, setCustomerToEdit] = useState();
+  const editCustomer = e => {
+    const { name, value } = e.target;
+    setCustomerToEdit(prevState => ({
+        ...prevState,
+        [name]: value
+    }));
+};
+
   return (
     <Router>
       {/* this part should be changed into a component named linkComponent */}
@@ -31,8 +41,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}> </Route>
-          <Route path="/customers" element={<Customers />}> </Route>
-          <Route path="/customers/:customerID" element={<EditCustomer />} > </Route>
+          <Route path="/customers" element={<Customers setCustomerToEdit={setCustomerToEdit}/>}> </Route>
+          <Route path="/customers/edit-customer" element={<EditCustomer customer={customerToEdit} handleChange={editCustomer} />} > </Route>
           <Route path="/series" element= {<Series />}> </Route>
           <Route path="/series/:seriesID" element={<EditSeries />}> </Route>
           <Route path="/episodes" element={<Episodes />}> </Route>
