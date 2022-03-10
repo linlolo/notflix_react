@@ -5,9 +5,9 @@ import CustomerTable from "../Components/CustomerTable";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Customers( {setCustomerToEdit} ) {
-    const [customer, setCustomer] = useState({ customerID: "", firstName: "", lastName: "", email: "" });
+export default function Customers( { setCustomerToEdit } ) {
     const [customers, setCustomers] = useState([]);
+    const [customer, setCustomer] = useState({ customerID: "", firstName: "", lastName: "", email: "" });
     
     const navigate = useNavigate();
 
@@ -22,11 +22,10 @@ export default function Customers( {setCustomerToEdit} ) {
     const loadCustomers = async () => {
         const response = await fetch('/customers');
         const data = await response.json();
-        setCustomers(data);
+        setCustomers(data.customers);
     }
 
     const addCustomer = async () => {
-        console.log(customer)
         const response = await fetch('/customers', {
             method: 'POST',
             body: JSON.stringify(customer),
@@ -37,9 +36,6 @@ export default function Customers( {setCustomerToEdit} ) {
         if (response.status === 201) {
             alert("Successfully added the customer");
         } else {
-            response.text().then((text) => {
-                console.log(text);
-            })
             alert(`Failed to add customer, status code = ${response.status}`);
         }
         loadCustomers()
@@ -56,7 +52,7 @@ export default function Customers( {setCustomerToEdit} ) {
         url += '?' + (new URLSearchParams(header)).toString()
         const response = await fetch(url);
         const data = await response.json();
-        setCustomers(data);
+        setCustomers(data.customers);
         loadCustomers();
     }
 
@@ -70,7 +66,6 @@ export default function Customers( {setCustomerToEdit} ) {
         const response = await fetch(`/customers/${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
             alert('Successfully deleted customer');
-            loadCustomers();
         } else {
             console.error(`Failed to delete customer with id=${_id}, status code = ${response.status}`);
         }
@@ -88,7 +83,7 @@ export default function Customers( {setCustomerToEdit} ) {
             <button className="textNavButton" onClick={addCustomer}>ADD NEW CUSTOMER</button>
             <button className="textNavButton" onClick={filterCustomers}>FILTER CUSTOMERS</button>
             <button className="textNavButton" onClick={loadCustomers}>CLEAR ALL FILTERS</button>
-            <CustomerTable customers={customers.customers} onDelete={deleteCustomer} onEdit={editCustomer}/>
+            <CustomerTable customers={customers} onDelete={deleteCustomer} onEdit={editCustomer}/>
         </div>
     );
 }

@@ -3,10 +3,13 @@ import React from "react";
 import ContentTypesForm from "../Components/ContentTypesForm";
 import ContentTypesTable from "../Components/ContentTypesTable";
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function ContentTypes() {
+export default function ContentTypes({ setContentToEdit }) {
     const [contents, setContents] = useState([]);
     const [content, setContent] = useState({ contentTypeID: "", seriesID: "", title: "", genreID: "", genreName: "" });
+
+    const navigate = useNavigate();
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -19,14 +22,13 @@ export default function ContentTypes() {
     const loadContents = async () => {
         const response = await fetch('/contents');
         const data = await response.json();
-        setContents(data);
+        setContents(data.contentTypes);
     }
 
     const addContent = async () => {
-        const newContent = content;
         const response = await fetch('/contents', {
             method: 'POST',
-            body: JSON.stringify(newContent),
+            body: JSON.stringify(content),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -36,6 +38,38 @@ export default function ContentTypes() {
         } else {
             alert(`Failed to add content, status code = ${response.status}`);
         }
+        loadContents();
+    }
+
+    const filterContents = async () => {
+        let header = {};
+        let url = '/contents';
+        for (const [key, value] of Object.entries(content)) {
+            if (value !== "") {
+                header[key] = value;
+            }
+        }
+        url += '?' + (new URLSearchParams(header)).toString()
+        const response = await fetch(url);
+        const data = await response.json();
+        setContents(data.contents);
+        loadContents();
+    }
+
+    const editContent = async (contentToEdit) => {
+        setContentToEdit(contentToEdit);
+        let url = `/contents/${contentToEdit.contentID}`;
+        navigate(url);
+    }
+
+    const deleteContent = async (_id) => {
+        const response = await fetch(`/contents/${_id}`, { method: 'DELETE' });
+        if (response.status === 204) {
+            alert('Successfully deleted content');
+        } else {
+            console.error(`Failed to delete content with id=${_id}, status code = ${response.status}`);
+        }
+        loadContents();
     }
 
     useEffect(() => {
@@ -47,9 +81,9 @@ export default function ContentTypes() {
             <h2>ContentType Management:</h2>
             <ContentTypesForm content={content} handleChange={handleChange} />
             <button type='button' onClick={addContent}>ADD NEW CONTENT-TYPE</button>
-            <button type='button'>FILTER CONTENT-TYPES</button>
-            <button type='button'>CLEAR ALL FILTERS</button>
-            <ContentTypesTable contents={contents}/>
+            <button type='button' onClick={filterContents}>FILTER CONTENT-TYPES</button>
+            <button type='button' onClick={loadContents}>CLEAR ALL FILTERS</button>
+            <ContentTypesTable contents={contents} onDelete={deleteContent} onEdit={editContent}/>
         </div>
     );
 }

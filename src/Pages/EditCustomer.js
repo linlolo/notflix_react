@@ -18,9 +18,9 @@ function EditCustomer({ customer, handleChange }) {
             },
         });
         if (response.status === 200) {
-            alert("Successfully edited exercise");
+            alert("Successfully edited customer");
         } else {
-            alert(`Failed to edit exercise, status code = ${response.status}`);
+            alert(`Failed to edit customer, status code = ${response.status}`);
         }
         navigate('/customers')
     }

@@ -1,12 +1,8 @@
 import "../App.css";
 import React from "react";
 import {GrEdit, GrTrash} from "react-icons/gr";
-import { useHistory } from 'react-router-dom';
 
 export default function CustomerTable({ customers, onDelete, onEdit }) {
-    if (customers === undefined) {
-        return null;
-    }
     return(
         <table>
             <caption>Customer Results:</caption>
@@ -21,10 +17,8 @@ export default function CustomerTable({ customers, onDelete, onEdit }) {
                 </tr>
             </thead>
             <tbody>
-                {
-                customers.map((customer, i) => <Customer customer={customer} onDelete={onDelete} onEdit={onEdit}
-                    key={i} />)
-                }
+                {customers.map((customer, i) => <Customer customer={customer} onDelete={onDelete} onEdit={onEdit}
+                    key={i} />)}
             </tbody>
         </table>
     );
