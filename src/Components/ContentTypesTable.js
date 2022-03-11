@@ -2,8 +2,8 @@ import "../App.css";
 import React from "react";
 import {GrTrash, GrEdit} from "react-icons/gr";
 
-export default function ContentTypesTable( { contents }) {
-    return (
+export default function ContentTypesTable( { contents, onDelete, onEdit }) {
+    return(
         <table>
             <caption>ContentTypes Results:</caption>
             <thead>
@@ -16,21 +16,21 @@ export default function ContentTypesTable( { contents }) {
                 <th>Genre Name</th>
             </thead>
             <tbody>
-                {contents.map((content, i) => <Content content={content}
+                {contents.map((content, i) => <Content content={content} onDelete={onDelete} onEdit={onEdit}
                     key={i} />)}
             </tbody>
         </table>
     );
 }
 
-function Content({ content }) {
+function Content({ content, onDelete, onEdit }) {
     return (
         <tr>
-            <td><GrEdit /></td>
-            <td><GrTrash /></td>
+            <td><GrEdit class="button" onClick={() => onEdit(content)}/></td>
+            <td><GrTrash class="button" onClick={() => onDelete(content)}/></td>
             <td>{content.contentTypeID}</td>
             <td>{content.seriesID}</td>
-            <td>{content.title}</td>
+            <td>{content.seriesTitle}</td>
             <td>{content.genreID}</td>
             <td>{content.genreName}</td>
         </tr>

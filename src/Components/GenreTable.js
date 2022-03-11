@@ -2,7 +2,7 @@ import "../App.css";
 import React from "react";
 import {GrTrash, GrEdit} from "react-icons/gr";
 
-export default function GenreTable( { genres }) {
+export default function GenreTable( { genres, onDelete, onEdit }) {
     return(
         <table>
             <caption>Genre Results:</caption>
@@ -13,20 +13,20 @@ export default function GenreTable( { genres }) {
                 <th>Genre Name</th>
             </thead>
             <tbody>
-                {genres.map((genre, i) => <Genre genre={genre}
+                {genres.map((genre, i) => <Genre genre={genre} onDelete={onDelete} onEdit={onEdit}
                         key={i} />)}
             </tbody>
         </table>
     );
 }
 
-function Genre({ genre }) {
+function Genre({ genre, onDelete, onEdit }) {
     return (
         <tr>
-            <td><GrEdit /></td>
-            <td><GrTrash /></td>
+            <td><GrEdit class="button" onClick={() => onEdit(genre)}/></td>
+            <td><GrTrash class="button" onClick={() => onDelete(genre.genreID)}/></td>
             <td>{genre.genreID}</td>
-            <td>{genre.name}</td>
+            <td>{genre.genreName}</td>
         </tr>
     );
 }

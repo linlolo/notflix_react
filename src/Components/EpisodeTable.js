@@ -1,8 +1,9 @@
 import "../App.css";
 import React from "react";
 import {GrEdit, GrTrash} from "react-icons/gr";
+import moment from "moment";
 
-export default function EpisodeTable( { episodes }) {
+export default function EpisodeTable( { episodes, onDelete, onEdit }) {
     return(
         <table>
             <caption>Episode Results:</caption>
@@ -20,23 +21,23 @@ export default function EpisodeTable( { episodes }) {
                 </tr>
             </thead>
             <tbody>
-                {episodes.map((episode, i) => <Episode episode={episode}
+                {episodes.map((episode, i) => <Episode episode={episode} onDelete={onDelete} onEdit={onEdit}
                     key={i} />)}
             </tbody>
         </table>
     );
 }
 
-function Episode({ episode }) {
+function Episode({ episode, onDelete, onEdit }) {
     return (
         <tr>
-            <td><GrEdit /></td>
-            <td><GrTrash /></td>
+            <td><GrEdit class="button" onClick={() => onEdit(episode)}/></td>
+            <td><GrTrash class="button" onClick={() => onDelete(episode)}/></td>
             <td>{episode.seriesID}</td>
             <td>{episode.episodeID}</td>
             <td>{episode.episodeTitle}</td>
-            <td>{episode.releaseDate}</td>
-            <td>{episode.prevEpisode}</td>
+            <td>{moment(episode.releaseDate).format("YYYY-MM-DD")}</td>
+            <td>{episode.previousEpisode}</td>
             <td>{episode.nextEpisode}</td>
             <td>{episode.fileSource}</td>
         </tr>

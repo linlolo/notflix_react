@@ -1,7 +1,7 @@
 import "../App.css";
 import React from "react";
 
-export default function EpisodeForm( {episode, handleChange}) {
+export default function EpisodeForm( {episode, handleChange, episodeDropdown}) {
     return(
         <form>
             <div className="formField">
@@ -47,13 +47,13 @@ export default function EpisodeForm( {episode, handleChange}) {
             <div className="formField">
                 <label for="previousEpisode">Previous Episode</label>
                 <select name="previousEpisode" id="previousEpisode" onChange={handleChange}>
-                    <option name="option from DB here" selected>Huckleberry</option>
+                    {episodeDropdown.map((option, i) => <option value={option.value} key={i} >{option.label}</option>)}
                 </select>
             </div>
             <div className="formField">
                 <label for="nextEpisode">Next Episode</label>
                 <select name="nextEpisode" id="nextEpisode" onChange={handleChange}>
-                    <option name="option from DB here" selected>Null</option>
+                {episodeDropdown.map((option, i) => <option value={option.value} key={i} >{option.label}</option>)}
                 </select>
             </div>
             <div className="formField">
@@ -67,4 +67,10 @@ export default function EpisodeForm( {episode, handleChange}) {
             </div>
         </form>
     );
+}
+
+function episodeDropdown({ }) {
+    return(
+        null
+    )
 }

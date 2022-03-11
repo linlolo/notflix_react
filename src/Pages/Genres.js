@@ -1,12 +1,15 @@
 import '../App.css';
 import React from "react";
-import { useState, useEffect } from 'react';
 import GenreForm from "../Components/GenreForm";
 import GenreTable from "../Components/GenreTable";
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function Genres() {
+export default function Genres( { setGenreToEdit }) {
     const [genres, setGenres] = useState([]);
-    const [genre, setGenre] = useState({ genreID: "", name: "" });
+    const [genre, setGenre] = useState({ genreID: "", genreName: "" });
+
+    const navigate = useNavigate();
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -19,14 +22,13 @@ export default function Genres() {
     const loadGenres = async () => {
         const response = await fetch('/genres');
         const data = await response.json();
-        setGenres(data);
+        setGenres(data.genres);
     }
 
     const addGenre = async () => {
-        const newGenre = genre;
         const response = await fetch('/genres', {
             method: 'POST',
-            body: JSON.stringify(newGenre),
+            body: JSON.stringify(genre),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -36,6 +38,38 @@ export default function Genres() {
         } else {
             alert(`Failed to add genre, status code = ${response.status}`);
         }
+        loadGenres();
+    }
+
+    const filterGenres = async () => {
+        let header = {};
+        let url = '/genres';
+        for (const [key, value] of Object.entries(genre)) {
+            if (value !== "") {
+                header[key] = value;
+            }
+        }
+        url += '?' + (new URLSearchParams(header)).toString()
+        const response = await fetch(url);
+        const data = await response.json();
+        setGenres(data.genres);
+        loadGenres();
+    }
+
+    const editGenre = async (genreToEdit) => {
+        setGenreToEdit(genreToEdit);
+        let url = `/genres/${genreToEdit.genreID}`;
+        navigate(url);
+    }
+
+    const deleteGenre = async (_id) => {
+        const response = await fetch(`/genres/${_id}`, { method: 'DELETE' });
+        if (response.status === 204) {
+            alert('Successfully deleted genre');
+        } else {
+            console.error(`Failed to delete genre with id=${_id}, status code = ${response.status}`);
+        }
+        loadGenres();
     }
 
     useEffect(() => {
@@ -47,9 +81,9 @@ export default function Genres() {
             <h2>Genre Management:</h2>
             <GenreForm genre={genre} handleChange={handleChange}/>
             <button type='button' onClick={addGenre}>ADD NEW GENRE</button>
-            <button type='button'>FILTER GENRES</button>
-            <button type='button'>CLEAR ALL FILTERS</button>
-            <GenreTable genres={genres}/>
+            <button type='button' onClick={filterGenres}>FILTER GENRES</button>
+            <button type='button' onClick={loadGenres}>CLEAR ALL FILTERS</button>
+            <GenreTable genres={genres} onDelete={deleteGenre} onEdit={editGenre}/>
         </div>
     );
 }

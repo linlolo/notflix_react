@@ -4,7 +4,6 @@ import React from "react";
 // Only pre-populate fields if useParams passes a subscriptionID.
 
 export default function SubscriptionForm({ subscription, handleChange }) {
-    
     return(
         <form>
             <div className="formField">

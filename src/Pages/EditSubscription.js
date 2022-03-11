@@ -1,14 +1,34 @@
 import "../App.css";
 import React from "react";
 import SubscriptionForm from "../Components/SubscriptionForm";
+import { useNavigate } from 'react-router-dom';
 
-export default function EditSubscription() {
+export default function EditSubscription({ subscription, handleChange }) {
+    const navigate = useNavigate();
+
+    const updateSubscription = async () => {
+        let url = `/subscriptions/${subscription.subscriptionID}`
+        const response = await fetch(url, {
+            method: 'PUT',
+            body: JSON.stringify(subscription),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        if (response.status === 200) {
+            alert("Successfully edited subscription");
+        } else {
+            alert(`Failed to edit subscription, status code = ${response.status}`);
+        }
+        navigate('/subscriptions')
+    }
+    
     return(
         <div className="page">
             <h3>Edit Subscription:</h3>
             <p>Note: SubscriptionID cannot be changed.</p>
-            <SubscriptionForm />
-            <button className="button">UPDATE SUBSCRIPTION</button>
+            <SubscriptionForm subscription={subscription} handleChange={handleChange}/>
+            <button className="button" onClick={updateSubscription}>UPDATE SUBSCRIPTION</button>
         </div>
     );
 }

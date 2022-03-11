@@ -1,9 +1,10 @@
 import "../App.css";
 import React from "react";
 import {GrEdit, GrTrash} from "react-icons/gr";
+import moment from "moment"
 
-export default function SubscriptionTable( { subscriptions }) {
-    return (
+export default function SubscriptionTable( { subscriptions, onDelete, onEdit }) {
+    return(
         <div>
             <table>
                 <caption>Subscription Results:</caption>
@@ -21,7 +22,7 @@ export default function SubscriptionTable( { subscriptions }) {
                 </tr>
                 </thead>
                 <tbody>
-                    {subscriptions.map((subscription, i) => <Subscription subscription={subscription}
+                    {subscriptions.map((subscription, i) => <Subscription subscription={subscription} onDelete={onDelete} onEdit={onEdit}
                         key={i} />)}
                 </tbody>
             </table>
@@ -29,18 +30,18 @@ export default function SubscriptionTable( { subscriptions }) {
     );
 }
 
-function Subscription({ subscription }) {
+function Subscription({ subscription, onDelete, onEdit }) {
     return (
         <tr>
-            <td><GrEdit /></td>
-            <td><GrTrash /></td>
+            <td><GrEdit class="button" onClick={() => onEdit(subscription)}/></td>
+            <td><GrTrash class="button" onClick={() => onDelete(subscription.subscriptionID)}/></td>
             <td>{subscription.subscriptionID}</td>
             <td>{subscription.customerID}</td>
             <td>{subscription.firstName}</td>
             <td>{subscription.lastName}</td>
             <td>{subscription.seriesID}</td>
             <td>{subscription.title}</td>
-            <td>{subscription.dateSubscribed}</td>
+            <td>{moment(subscription.dateSubscribed).format("YYYY-MM-DD")}</td>
         </tr>
     );
 }
