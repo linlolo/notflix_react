@@ -81,7 +81,6 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         const data = await response.json();
         let tempList = [{ value: null, label:'Null' }];
         for (let i = 0; i < data.episodes.length; i++) {
-            console.log(data.episodes[i]);
             tempList.push({value: data.episodes[i].episodeID, label: data.episodes[i].episodeTitle});
         }
         setEpisodeDropdown(tempList);
