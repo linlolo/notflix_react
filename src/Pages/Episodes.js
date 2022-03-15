@@ -75,16 +75,17 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         await loadEpisodes();
     }
 
-    const getSeriesEpisodes = useCallback(async (seriesID) => {
+    const getSeriesEpisodes = async (seriesID) => {
         let url = `${API}/episodes?seriesID=${seriesID}`;
         const response = await fetch(url);
         const data = await response.json();
         let tempList = [{ value: null, label:'Null' }];
-        for (const item in data.episodes) {
-            tempList.append({value: item.episodeID, label: item.episodeTitle});
+        for (let i = 0; i < data.episodes.length; i++) {
+            console.log(data.episodes[i]);
+            tempList.push({value: data.episodes[i].episodeID, label: data.episodes[i].episodeTitle});
         }
         setEpisodeDropdown(tempList);
-    }, [setEpisodeDropdown])
+    }
 
     useEffect( async () => {
         await loadEpisodes();
@@ -92,7 +93,7 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
 
     useEffect(async () => {
         await getSeriesEpisodes(episode.seriesID);
-    }, [episode.seriesID, getSeriesEpisodes])
+    }, [episode.seriesID])
 
     return (
         <div className="page">

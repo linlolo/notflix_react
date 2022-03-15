@@ -12,11 +12,11 @@ export default function EpisodeTable( { episodes, onDelete, onEdit }) {
                     <th>Edit</th>
                     <th>Delete</th>
                     <th>Series ID</th>
-                    <th>Episode ID</th>
+                    <th>Ep ID</th>
                     <th>Episode Title</th>
                     <th>Release Date</th>
-                    <th>Previous Episode</th>
-                    <th>Next Episode</th>
+                    <th>Prev Ep</th>
+                    <th>Next Ep</th>
                     <th>Source File</th>
                 </tr>
             </thead>
