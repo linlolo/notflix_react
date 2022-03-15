@@ -60,7 +60,7 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
     const editSubscription = async (subscriptionToEdit) => {
         subscriptionToEdit.dateSubscribed = moment(subscriptionToEdit.dateSubscribed).format("YYYY-MM-DD")
         setSubscriptionToEdit(subscriptionToEdit);
-        let url = `${API}/subscriptions/${subscriptionToEdit.subscriptionID}`;
+        let url = `/subscriptions/${subscriptionToEdit.subscriptionID}`;
         navigate(url);
     }
 

@@ -4,29 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Subject line (try to keep under 50 characters)&#10;&#10;Multi-line description of commit,&#10;feel free to be detailed.&#10;&#10;[Ticket: X]&#10;&#10;# F2 to save, F4 to close and finish commit.">
-      <change afterPath="$PROJECT_DIR$/src/Components/api.js" afterDir="false" />
+    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Edited API paths to correct backend.&#10;&#10;Sending to notflix-backend.herokuapp.com&#10;rather than localhost/{route}&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ContentTypesForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ContentTypesForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CustomerForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CustomerForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/EpisodeForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/EpisodeForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GenreForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GenreForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SeriesForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SeriesForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SubscriptionForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SubscriptionForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/ContentTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ContentTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Customers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/EditCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/EditCustomer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/EditEpisode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/EditEpisode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/EditGenre.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/EditGenre.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/EditSeries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/EditSeries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/EditSubscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/EditSubscription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/EditType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/EditType.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Episodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Episodes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Genres.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Genres.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Series.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Series.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Subscriptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Subscriptions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +97,7 @@
       <workItem from="1646921115530" duration="278000" />
       <workItem from="1647011306896" duration="2268000" />
       <workItem from="1647352026620" duration="4218000" />
-      <workItem from="1647356568834" duration="2749000" />
+      <workItem from="1647356568834" duration="8712000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize React framework for NotFlix front end.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
       <created>1644267565337</created>
@@ -269,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645138526787</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Edited API paths to correct backend.&#10;&#10;Sending to notflix-backend.herokuapp.com&#10;rather than localhost/{route}&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1647361017420</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1647361017420</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +300,7 @@
     <MESSAGE value="Updated Form CSS styling&#10;&#10;TODO: Buttons, Tables&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Finish Button and Table CSS&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Small file update&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Small file update&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Edited API paths to correct backend.&#10;&#10;Sending to notflix-backend.herokuapp.com&#10;rather than localhost/{route}&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited API paths to correct backend.&#10;&#10;Sending to notflix-backend.herokuapp.com&#10;rather than localhost/{route}&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
   </component>
 </project>

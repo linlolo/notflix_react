@@ -1,5 +1,5 @@
 import "../App.css";
-import React from "react";
+import React, {useCallback} from "react";
 import EpisodeForm from "../Components/EpisodeForm";
 import EpisodeTable from "../Components/EpisodeTable";
 import { useState, useEffect } from 'react';
@@ -40,7 +40,7 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         } else {
             alert(`Failed to add episode, status code = ${response.status}`);
         }
-        loadEpisodes();
+        await loadEpisodes();
     }
     
     const filterEpisodes = async () => {
@@ -59,9 +59,9 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
 
     const editEpisode = async (episodeToEdit) => {
         episodeToEdit.releaseDate = moment(episodeToEdit.releaseDate).format("YYYY-MM-DD");
-        getSeriesEpisodes(episodeToEdit.seriesID);
+        await getSeriesEpisodes(episodeToEdit.seriesID);
         setEpisodeToEdit(episodeToEdit);
-        let url = `${API}/episodes/${episodeToEdit.episodeID}`;
+        let url = `/episodes/${episodeToEdit.episodeID}`;
         navigate(url);
     }
 
@@ -72,28 +72,27 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         } else {
             console.error(`Failed to delete episode with id=${_id}, status code = ${response.status}`);
         }
-        loadEpisodes();
+        await loadEpisodes();
     }
 
-    const getSeriesEpisodes = async (seriesID) => {
-        let url = `${API}/episodes?seriesID=${episode.seriesID}`;
+    const getSeriesEpisodes = useCallback(async (seriesID) => {
+        let url = `${API}/episodes?seriesID=${seriesID}`;
         const response = await fetch(url);
         const data = await response.json();
         let tempList = [{ value: null, label:'Null' }];
-        for (const episode of data.episodes.values()) {
-            tempList.push({value: episode.episodeTitle, label: episode.episodeTitle});
+        for (const item in data.episodes) {
+            tempList.append({value: item.episodeID, label: item.episodeTitle});
         }
         setEpisodeDropdown(tempList);
-    }
+    }, [setEpisodeDropdown])
 
-    const loadSeriesEpisodes = async () => {
-
-    }
+    useEffect( async () => {
+        await loadEpisodes();
+    }, [])
 
     useEffect(async () => {
-        await loadEpisodes();
-        loadSeriesEpisodes();
-    }, [])
+        await getSeriesEpisodes(episode.seriesID);
+    }, [episode.seriesID, getSeriesEpisodes])
 
     return (
         <div className="page">

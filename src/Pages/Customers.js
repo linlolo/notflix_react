@@ -58,7 +58,7 @@ export default function Customers( { setCustomerToEdit } ) {
 
     const editCustomer = async (customerToEdit) => {
         setCustomerToEdit(customerToEdit);
-        let url = `${API}/customers/${customerToEdit.customerID}`;
+        let url = `/customers/${customerToEdit.customerID}`;
         navigate(url);
     }
 

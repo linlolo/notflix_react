@@ -68,9 +68,3 @@ export default function EpisodeForm( {episode, handleChange, episodeDropdown}) {
         </form>
     );
 }
-
-function episodeDropdown({ }) {
-    return(
-        null
-    )
-}

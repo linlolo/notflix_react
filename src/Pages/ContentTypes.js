@@ -58,7 +58,7 @@ export default function ContentTypes({ setContentToEdit }) {
 
     const editContent = async (contentToEdit) => {
         setContentToEdit(contentToEdit);
-        let url = `${API}/contents/${contentToEdit.contentID}`;
+        let url = `/contents/${contentToEdit.contentID}`;
         navigate(url);
     }
 

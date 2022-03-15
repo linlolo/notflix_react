@@ -58,7 +58,7 @@ export default function Genres( { setGenreToEdit }) {
 
     const editGenre = async (genreToEdit) => {
         setGenreToEdit(genreToEdit);
-        let url = `${API}/genres/${genreToEdit.genreID}`;
+        let url = `/genres/${genreToEdit.genreID}`;
         navigate(url);
     }
 
