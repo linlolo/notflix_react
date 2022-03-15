@@ -2,6 +2,7 @@ import "../App.css";
 import React from "react";
 import SeriesForm from "../Components/SeriesForm";
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 // page to edit an existing Series.
 // Pre-populate fields for `title`, `contentRating`.
 // Table below to add/delete Episodes.
@@ -10,7 +11,7 @@ function EditSeries({ series, handleChange }) {
     const navigate = useNavigate();
 
     const updateSeries = async () => {
-        let url = `/series/${series.seriesID}`
+        let url = `${API}/series/${series.seriesID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(series),
@@ -31,7 +32,7 @@ function EditSeries({ series, handleChange }) {
             <h3>Edit Series details</h3>
             <p>Note: SeriesID cannot be changed.</p>
             <SeriesForm series={series} handleChange={handleChange}/>
-            <button type="button" className="formButton" onClick={updateSeries}>UPDATE EPISODE</button>
+            <button type="button" className="formButton" onClick={updateSeries}>UPDATE SERIES</button>
         </div>
     );
 }

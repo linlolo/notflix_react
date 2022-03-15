@@ -2,12 +2,13 @@ import "../App.css";
 import React from "react";
 import SubscriptionForm from "../Components/SubscriptionForm";
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 
 export default function EditSubscription({ subscription, handleChange }) {
     const navigate = useNavigate();
 
     const updateSubscription = async () => {
-        let url = `/subscriptions/${subscription.subscriptionID}`
+        let url = `${API}/subscriptions/${subscription.subscriptionID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(subscription),

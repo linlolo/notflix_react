@@ -7,33 +7,33 @@ export default function SubscriptionForm({ subscription, handleChange }) {
     return(
         <form>
             <div className="formField">
-                <label for="customerID">CustomerID:</label>
+                <label htmlFor="customerID">CustomerID:</label>
                     <input
                         type="text"
                         id="customerID"
                         name="customerID"
                         value={subscription.customerID}
-                        placeholder="10792341112"
+                        placeholder="Customer ID"
                         onChange={handleChange} />
             </div>
             <div className="formField">
-                <label for="seriesID">SeriesID:</label>
+                <label htmlFor="seriesID">SeriesID:</label>
                     <input
                         type="text"
                         id="seriesID"
                         name="seriesID"
                         value={subscription.seriesID}
-                        placeholder="10846290217"
+                        placeholder="Series ID"
                         onChange={handleChange} />
             </div>
             <div className="formField">
-                <label for="dateSubscribed">Date Subscribed:</label>
+                <label htmlFor="dateSubscribed">Date Subscribed:</label>
                     <input
                         type="date"
                         id="dateSubscribed"
                         name="dateSubscribed"
                         value={subscription.dateSubscribed}
-                        placeholder="2022-02-01"
+                        placeholder="YYYY-MM-DD"
                         onChange={handleChange} />
             </div>
         </form>

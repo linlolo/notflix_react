@@ -4,6 +4,7 @@ import SeriesForm from "../Components/SeriesForm";
 import SeriesTable from "../Components/SeriesTable";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 
 export default function Series( { setSeriesToEdit }) {
     const [series, setSeries] = useState([]);
@@ -20,14 +21,14 @@ export default function Series( { setSeriesToEdit }) {
     };
     
     const loadSeries = async () => {
-        const response = await fetch('/series');
+        const response = await fetch(`${API}/series`);
         const data = await response.json();
         setSeries(data.series);
     }
 
     const addSeries = async () => {
         const newSeries = oneSeries;
-        const response = await fetch('/series', {
+        const response = await fetch(`${API}/series`, {
             method: 'POST',
             body: JSON.stringify(newSeries),
             headers: {
@@ -44,7 +45,7 @@ export default function Series( { setSeriesToEdit }) {
     
     const filterSeries = async () => {
         let header = {};
-        let url = '/series';
+        let url = `${API}/series`;
         for (const [key, value] of Object.entries(oneSeries)) {
             if (value !== "") {
                 header[key] = value;
@@ -54,7 +55,6 @@ export default function Series( { setSeriesToEdit }) {
         const response = await fetch(url);
         const data = await response.json();
         setSeries(data.series);
-        loadSeries();
     }
 
     const editSeries = async (seriesToEdit) => {
@@ -64,7 +64,7 @@ export default function Series( { setSeriesToEdit }) {
     }
 
     const deleteSeries = async (_id) => {
-        const response = await fetch(`/series/${_id}`, { method: 'DELETE' });
+        const response = await fetch(`${API}/series/${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
             alert('Successfully deleted series');
         } else {

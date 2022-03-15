@@ -4,6 +4,7 @@ import SubscriptionForm from "../Components/SubscriptionForm";
 import SubscriptionTable from "../Components/SubscriptionTable";
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 import moment from "moment";
 
 export default function Subscriptions( {setSubscriptionToEdit }) {
@@ -21,13 +22,13 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
     };
 
     const loadSubscriptions = async () => {
-        const response = await fetch('/subscriptions');
+        const response = await fetch(`${API}/subscriptions`);
         const data = await response.json();
         setSubscriptions(data.subscriptions);
     }
 
     const addSubscription = async () => {
-        const response = await fetch('/subscriptions', {
+        const response = await fetch(`${API}/subscriptions`, {
             method: 'POST',
             body: JSON.stringify(subscription),
             headers: {
@@ -44,7 +45,7 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
 
     const filterSubscriptions = async () => {
         let header = {};
-        let url = '/subscriptions';
+        let url = `${API}/subscriptions`;
         for (const [key, value] of Object.entries(subscription)) {
             if (value !== "") {
                 header[key] = value;
@@ -54,18 +55,17 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
         const response = await fetch(url);
         const data = await response.json();
         setSubscriptions(data.subscriptions);
-        loadSubscriptions();
     }
 
     const editSubscription = async (subscriptionToEdit) => {
         subscriptionToEdit.dateSubscribed = moment(subscriptionToEdit.dateSubscribed).format("YYYY-MM-DD")
         setSubscriptionToEdit(subscriptionToEdit);
-        let url = `/subscriptions/${subscriptionToEdit.subscriptionID}`;
+        let url = `${API}/subscriptions/${subscriptionToEdit.subscriptionID}`;
         navigate(url);
     }
 
     const deleteSubscription = async (_id) => {
-        const response = await fetch(`/subscriptions/${_id}`, { method: 'DELETE' });
+        const response = await fetch(`${API}/subscriptions/${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
             alert('Successfully deleted subscription');
         } else {

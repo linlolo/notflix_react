@@ -2,12 +2,13 @@ import "../App.css";
 import React from "react";
 import GenreForm from "../Components/GenreForm";
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 
 export default function EditGenre({ genre, handleChange }) {
     const navigate = useNavigate();
 
     const updateGenre = async () => {
-        let url = `/genres/${genre.genreID}`
+        let url = `${API}/genres/${genre.genreID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(genre),

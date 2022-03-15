@@ -4,6 +4,7 @@ import ContentTypesForm from "../Components/ContentTypesForm";
 import ContentTypesTable from "../Components/ContentTypesTable";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 
 export default function ContentTypes({ setContentToEdit }) {
     const [contents, setContents] = useState([]);
@@ -20,13 +21,13 @@ export default function ContentTypes({ setContentToEdit }) {
     };
 
     const loadContents = async () => {
-        const response = await fetch('/contents');
+        const response = await fetch(`${API}/contents`);
         const data = await response.json();
         setContents(data.contentTypes);
     }
 
     const addContent = async () => {
-        const response = await fetch('/contents', {
+        const response = await fetch(`${API}/contents`, {
             method: 'POST',
             body: JSON.stringify(content),
             headers: {
@@ -43,7 +44,7 @@ export default function ContentTypes({ setContentToEdit }) {
 
     const filterContents = async () => {
         let header = {};
-        let url = '/contents';
+        let url = `${API}/contents`;
         for (const [key, value] of Object.entries(content)) {
             if (value !== "") {
                 header[key] = value;
@@ -53,17 +54,16 @@ export default function ContentTypes({ setContentToEdit }) {
         const response = await fetch(url);
         const data = await response.json();
         setContents(data.contents);
-        loadContents();
     }
 
     const editContent = async (contentToEdit) => {
         setContentToEdit(contentToEdit);
-        let url = `/contents/${contentToEdit.contentID}`;
+        let url = `${API}/contents/${contentToEdit.contentID}`;
         navigate(url);
     }
 
     const deleteContent = async (_id) => {
-        const response = await fetch(`/contents/${_id}`, { method: 'DELETE' });
+        const response = await fetch(`${API}/contents${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
             alert('Successfully deleted content');
         } else {

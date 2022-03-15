@@ -4,6 +4,7 @@ import GenreForm from "../Components/GenreForm";
 import GenreTable from "../Components/GenreTable";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 
 export default function Genres( { setGenreToEdit }) {
     const [genres, setGenres] = useState([]);
@@ -20,13 +21,13 @@ export default function Genres( { setGenreToEdit }) {
     };
 
     const loadGenres = async () => {
-        const response = await fetch('/genres');
+        const response = await fetch(`${API}/genres`);
         const data = await response.json();
         setGenres(data.genres);
     }
 
     const addGenre = async () => {
-        const response = await fetch('/genres', {
+        const response = await fetch(`${API}/genres`, {
             method: 'POST',
             body: JSON.stringify(genre),
             headers: {
@@ -43,7 +44,7 @@ export default function Genres( { setGenreToEdit }) {
 
     const filterGenres = async () => {
         let header = {};
-        let url = '/genres';
+        let url = `${API}/genres`;
         for (const [key, value] of Object.entries(genre)) {
             if (value !== "") {
                 header[key] = value;
@@ -53,17 +54,16 @@ export default function Genres( { setGenreToEdit }) {
         const response = await fetch(url);
         const data = await response.json();
         setGenres(data.genres);
-        loadGenres();
     }
 
     const editGenre = async (genreToEdit) => {
         setGenreToEdit(genreToEdit);
-        let url = `/genres/${genreToEdit.genreID}`;
+        let url = `${API}/genres/${genreToEdit.genreID}`;
         navigate(url);
     }
 
     const deleteGenre = async (_id) => {
-        const response = await fetch(`/genres/${_id}`, { method: 'DELETE' });
+        const response = await fetch(`${API}/genres/${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
             alert('Successfully deleted genre');
         } else {

@@ -4,6 +4,7 @@ import CustomerForm from "../Components/CustomerForm";
 import CustomerTable from "../Components/CustomerTable";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 
 export default function Customers( { setCustomerToEdit } ) {
     const [customers, setCustomers] = useState([]);
@@ -20,13 +21,13 @@ export default function Customers( { setCustomerToEdit } ) {
     };
 
     const loadCustomers = async () => {
-        const response = await fetch('/customers');
+        const response = await fetch(`${API}/customers`);
         const data = await response.json();
         setCustomers(data.customers);
     }
 
     const addCustomer = async () => {
-        const response = await fetch('/customers', {
+        const response = await fetch(`${API}/customers`, {
             method: 'POST',
             body: JSON.stringify(customer),
             headers: {
@@ -38,32 +39,31 @@ export default function Customers( { setCustomerToEdit } ) {
         } else {
             alert(`Failed to add customer, status code = ${response.status}`);
         }
-        loadCustomers()
+        setCustomers(response.customers);
     }
 
     const filterCustomers = async () => {
         let header = {};
-        let url = '/customers';
+        let url = `${API}/customers`;
         for (const [key, value] of Object.entries(customer)) {
             if (value !== "") {
                 header[key] = value;
             }
         }
-        url += '?' + (new URLSearchParams(header)).toString()
+        url += '?' + (new URLSearchParams(header)).toString();
         const response = await fetch(url);
         const data = await response.json();
         setCustomers(data.customers);
-        loadCustomers();
     }
 
     const editCustomer = async (customerToEdit) => {
         setCustomerToEdit(customerToEdit);
-        let url = `/customers/${customerToEdit.customerID}`;
+        let url = `${API}/customers/${customerToEdit.customerID}`;
         navigate(url);
     }
 
     const deleteCustomer = async (_id) => {
-        const response = await fetch(`/customers/${_id}`, { method: 'DELETE' });
+        const response = await fetch(`${API}/customers/${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
             alert('Successfully deleted customer');
         } else {

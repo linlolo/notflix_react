@@ -8,43 +8,33 @@ export default function CustomerForm( { customer, handleChange } ) {
     return (
         <form className="customerSearchForm">
             <div className="formField">
-                <label for="customerID">Customer ID:</label>
-                    <input
-                        type="text"
-                        id="customerID"
-                        name="customerID"
-                        value={customer.customerID}
-                        placeholder="Leave blank to create new Customer"
-                        onChange={handleChange} />
-            </div>
-            <div className="formField">
-                <label for="firstName">First Name:</label>
+                <label htmlFor="firstName">First Name:</label>
                     <input
                         type="text"
                         id="firstName"
                         name="firstName"
                         value={customer.firstName}
-                        placeholder="John"
+                        placeholder="First Name"
                         onChange={handleChange} />
             </div>
             <div className="formField">
-                <label for="lastName">Last Name:</label>
+                <label htmlFor="lastName">Last Name:</label>
                     <input
                         type="text"
                         id="lastName"
                         name="lastName"
                         value={customer.lastName}
-                        placeholder="Doe"
+                        placeholder="Last Name"
                         onChange={handleChange} />
             </div>
             <div className="formField">
-                <label for="email">Email:</label>
+                <label htmlFor="email">Email:</label>
                     <input
                         type="text"
                         id="email"
                         name="email"
                         value={customer.email}
-                        placeholder="email@hello.com"
+                        placeholder="email@email.com"
                         onChange={handleChange} />
             </div>
         </form>

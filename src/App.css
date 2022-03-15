@@ -185,14 +185,21 @@ td {
 }
 
 button {
-  padding: 0.1rem 0.25rem;
-  margin: 0.2rem 0.25rem;
+  padding: 0.2rem 0.25rem;
+  margin: 0.3rem 0.25rem;
   font-size: calc(10px + 1vmin);
   font-family: 'Lato', sans-serif;
   border-color: var(--dark-txt);
   border-radius: 5px;
   color: var(--dark-txt);
   background-color: var(--highlight);
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 .button {

@@ -1,6 +1,7 @@
 import React from "react";
 import EpisodeForm from "../Components/EpisodeForm";
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 // page to edit an existing Episode.
 // Pre-populate fields for `seriesID`, `episodeTitle`, `releaseDate`,
 // `previousEpisode`, `nextEpisode`, `fileSource`.
@@ -9,7 +10,7 @@ function EditEpisode({ episode, handleChange, episodeDropdown }) {
     const navigate = useNavigate();
 
     const updateEpisode = async () => {
-        let url = `/episodes/${episode.episodeID}`
+        let url = `${API}/episodes/${episode.episodeID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(episode),

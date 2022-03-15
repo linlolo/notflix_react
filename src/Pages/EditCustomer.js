@@ -1,6 +1,7 @@
 import React from "react";
 import CustomerForm from "../Components/CustomerForm";
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 // page to edit an existing Customer. Pre-populate fields for `firstName`,
 // `lastName`, `email`.
 // Table below to add/delete Subscriptions.
@@ -9,7 +10,7 @@ function EditCustomer({ customer, handleChange }) {
     const navigate = useNavigate();
 
     const updateCustomer = async () => {
-        let url = `/customers/${customer.customerID}`
+        let url = `${API}/customers/${customer.customerID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(customer),

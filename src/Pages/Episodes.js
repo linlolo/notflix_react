@@ -4,6 +4,7 @@ import EpisodeForm from "../Components/EpisodeForm";
 import EpisodeTable from "../Components/EpisodeTable";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 import moment from "moment";
 
 export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episodeDropdown }) {
@@ -21,13 +22,13 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
     };
 
     const loadEpisodes = async () => {
-        const response = await fetch('/episodes');
+        const response = await fetch(`${API}/episodes`);
         const data = await response.json();
         setEpisodes(data.episodes);
     }
 
     const addEpisode = async () => {
-        const response = await fetch('/episodes', {
+        const response = await fetch(`${API}/episodes`, {
             method: 'POST',
             body: JSON.stringify(episode),
             headers: {
@@ -44,7 +45,7 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
     
     const filterEpisodes = async () => {
         let header = {};
-        let url = '/episodes';
+        let url = `${API}/episodes`;
         for (const [key, value] of Object.entries(episode)) {
             if (value !== "") {
                 header[key] = value;
@@ -54,19 +55,18 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         const response = await fetch(url);
         const data = await response.json();
         setEpisodes(data.episodes);
-        loadEpisodes();
     }
 
     const editEpisode = async (episodeToEdit) => {
         episodeToEdit.releaseDate = moment(episodeToEdit.releaseDate).format("YYYY-MM-DD");
         getSeriesEpisodes(episodeToEdit.seriesID);
         setEpisodeToEdit(episodeToEdit);
-        let url = `/episodes/${episodeToEdit.episodeID}`;
+        let url = `${API}/episodes/${episodeToEdit.episodeID}`;
         navigate(url);
     }
 
     const deleteEpisode = async (_id) => {
-        const response = await fetch(`/episodes/${_id}`, { method: 'DELETE' });
+        const response = await fetch(`${API}/episodes/${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
             alert('Successfully deleted episode');
         } else {
@@ -76,7 +76,7 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
     }
 
     const getSeriesEpisodes = async (seriesID) => {
-        let url = `/episodes?seriesID=${episode.seriesID}`;
+        let url = `${API}/episodes?seriesID=${episode.seriesID}`;
         const response = await fetch(url);
         const data = await response.json();
         let tempList = [{ value: null, label:'Null' }];

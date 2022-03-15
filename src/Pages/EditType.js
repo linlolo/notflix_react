@@ -2,12 +2,13 @@ import "../App.css";
 import React from "react";
 import ContentTypesForm from "../Components/ContentTypesForm";
 import { useNavigate } from 'react-router-dom';
+import {API} from '../Components/api';
 
 export default function EditType({ content, handleChange }) {
     const navigate = useNavigate();
 
     const updateContent = async () => {
-        let url = `/contents/${content.contentTypeID}`
+        let url = `${API}/contents/${content.contentTypeID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(content),
