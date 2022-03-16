@@ -26,8 +26,8 @@ export default function SeriesTable({ series, onDelete, onEdit }) {
 function Series({ series, onEdit, onDelete }) {
     return (
         <tr>
-            <td><GrEdit class='button' onClick={() => onEdit(series)}/></td>
-            <td><GrTrash class='button' onClick={() => onDelete(series.seriesID)}/></td>
+            <td><GrEdit className='button' onClick={() => onEdit(series)}/></td>
+            <td><GrTrash className='button' onClick={() => onDelete(series.seriesID)}/></td>
             <td>{series.seriesID}</td>
             <td>{series.title}</td>
             <td>{series.contentRating}</td>

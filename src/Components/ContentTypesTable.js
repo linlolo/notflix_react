@@ -7,6 +7,7 @@ export default function ContentTypesTable( { contents, onDelete, onEdit }) {
         <table>
             <caption>ContentTypes Results:</caption>
             <thead>
+            <tr>
                 <th>Edit</th>
                 <th>Delete</th>
                 <th>ContentType ID</th>
@@ -14,6 +15,7 @@ export default function ContentTypesTable( { contents, onDelete, onEdit }) {
                 <th>Series Title</th>
                 <th>Genre ID</th>
                 <th>Genre Name</th>
+            </tr>
             </thead>
             <tbody>
                 {contents.map((content, i) => <Content content={content} onDelete={onDelete} onEdit={onEdit}

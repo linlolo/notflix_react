@@ -63,7 +63,8 @@ export default function EpisodeForm( {episode, handleChange, episodeDropdown}) {
                     id="fileSource"
                     name="fileSource"
                     value={episode.fileSource}
-                    placeholder="filename.xyz" />
+                    placeholder="filename.xyz"
+                    onChange={handleChange}/>
             </div>
         </form>
     );

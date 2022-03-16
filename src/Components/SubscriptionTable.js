@@ -33,8 +33,8 @@ export default function SubscriptionTable( { subscriptions, onDelete, onEdit }) 
 function Subscription({ subscription, onDelete, onEdit }) {
     return (
         <tr>
-            <td><GrEdit class="button" onClick={() => onEdit(subscription)}/></td>
-            <td><GrTrash class="button" onClick={() => onDelete(subscription.subscriptionID)}/></td>
+            <td><GrEdit className="button" onClick={() => onEdit(subscription)}/></td>
+            <td><GrTrash className="button" onClick={() => onDelete(subscription.subscriptionID)}/></td>
             <td>{subscription.subscriptionID}</td>
             <td>{subscription.customerID}</td>
             <td>{subscription.firstName}</td>

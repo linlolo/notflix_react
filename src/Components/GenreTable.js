@@ -7,10 +7,12 @@ export default function GenreTable( { genres, onDelete, onEdit }) {
         <table>
             <caption>Genre Results:</caption>
             <thead>
+            <tr>
                 <th>Edit</th>
                 <th>Delete</th>
                 <th>Genre ID</th>
                 <th>Genre Name</th>
+            </tr>
             </thead>
             <tbody>
                 {genres.map((genre, i) => <Genre genre={genre} onDelete={onDelete} onEdit={onEdit}
