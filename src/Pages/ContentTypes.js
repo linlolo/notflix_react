@@ -3,14 +3,12 @@ import React from "react";
 import ContentTypesForm from "../Components/ContentTypesForm";
 import ContentTypesTable from "../Components/ContentTypesTable";
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import {API} from '../Components/api';
 
-export default function ContentTypes({ setContentToEdit }) {
+export default function ContentTypes() {
     const [contents, setContents] = useState([]);
     const [content, setContent] = useState({});
-
-    const navigate = useNavigate();
+    const reqFields = ['seriesID', 'genreID'];
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -24,9 +22,16 @@ export default function ContentTypes({ setContentToEdit }) {
         const response = await fetch(`${API}/contents`);
         const data = await response.json();
         setContents(data.contentTypes);
+        console.log(data.contentTypes);
     }
 
     const addContent = async () => {
+        for (const field of reqFields) {
+            if (!(field in content) || (content[field] === "")) {
+                alert('Please enter all required fields');
+                return;
+            }
+        }
         const response = await fetch(`${API}/contents`, {
             method: 'POST',
             body: JSON.stringify({
@@ -42,6 +47,7 @@ export default function ContentTypes({ setContentToEdit }) {
         } else {
             alert(`Failed to add content, status code = ${response.status}`);
         }
+        console.log(response);
         loadContents();
     }
 
@@ -59,10 +65,9 @@ export default function ContentTypes({ setContentToEdit }) {
         setContents(data.contents);
     }
 
-    const editContent = async (contentToEdit) => {
-        setContentToEdit(contentToEdit);
-        let url = `/contents/${contentToEdit.contentID}`;
-        navigate(url, {state: {id: contentToEdit.contentID}});
+    const editContent = async () => {
+        alert('To edit, simply delete and create a new entry');
+        return;
     }
 
     const deleteContent = async (_id) => {
@@ -82,6 +87,7 @@ export default function ContentTypes({ setContentToEdit }) {
     return (
         <div className="page">
             <h2>ContentType Management:</h2>
+            <p>Note: Only Series ID and Genre ID are required to add entry</p>
             <ContentTypesForm content={content} handleChange={handleChange} />
             <button type='button' onClick={addContent}>ADD NEW CONTENT-TYPE</button>
             <button type='button' onClick={filterContents}>FILTER CONTENT-TYPES</button>

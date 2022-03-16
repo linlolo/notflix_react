@@ -9,6 +9,7 @@ import moment from "moment";
 export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episodeDropdown }) {
     const [episodes, setEpisodes] = useState([]);
     const [episode, setEpisode] = useState({});
+    const reqFields = ['seriesID', 'episodeTitle', 'releaseDate', 'fileSource'];
 
     const navigate = useNavigate();
 
@@ -27,6 +28,12 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
     }
 
     const addEpisode = async () => {
+        for (const field of reqFields) {
+            if (!(field in episode) || (episode[field] === "")) {
+                alert('Please enter all required fields');
+                return;
+            }
+        }
         const response = await fetch(`${API}/episodes`, {
             method: 'POST',
             body: JSON.stringify(episode),
@@ -40,6 +47,7 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
             alert(`Failed to add episode, status code = ${response.status}`);
         }
         await loadEpisodes();
+        getSeriesEpisodes(episode.seriesID);
     }
     
     const filterEpisodes = async () => {
@@ -65,6 +73,7 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
     }
 
     const deleteEpisode = async (_id) => {
+        console.log(_id);
         const response = await fetch(`${API}/episodes/${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
             alert('Successfully deleted episode');
@@ -89,9 +98,9 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         await loadEpisodes();
     }, [])
 
-    useEffect(async () => {
-        await getSeriesEpisodes(episode.seriesID);
-    }, [episode.seriesID])
+    // useEffect(async () => {
+    //     await getSeriesEpisodes(episode.seriesID);
+    // }, [episode.seriesID])
 
     return (
         <div className="page">

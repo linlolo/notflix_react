@@ -40,7 +40,7 @@ function Subscription({ subscription, onDelete, onEdit }) {
             <td>{subscription.firstName}</td>
             <td>{subscription.lastName}</td>
             <td>{subscription.seriesID}</td>
-            <td>{subscription.title}</td>
+            <td>{subscription.seriesTitle}</td>
             <td>{moment(subscription.dateSubscribed).format("YYYY-MM-DD")}</td>
         </tr>
     );

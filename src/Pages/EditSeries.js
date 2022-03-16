@@ -8,7 +8,7 @@ import {API} from '../Components/api';
 
 function EditSeries({ series, handleChange }) {
     const navigate = useNavigate();
-    const state = useLocation();
+    const { state } = useLocation();
 
     const updateSeries = async () => {
         series.seriesID = state.id;
@@ -18,6 +18,7 @@ function EditSeries({ series, handleChange }) {
                 return;
             };
         };
+        console.log(series);
         let url = `${API}/series/${series.seriesID}`
         const response = await fetch(url, {
             method: 'PUT',

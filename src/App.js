@@ -21,7 +21,6 @@ import EditSubscription from "./Pages/EditSubscription";
 import Genres from "./Pages/Genres";
 import EditGenre from "./Pages/EditGenre";
 import ContentTypes from "./Pages/ContentTypes";
-import EditType from "./Pages/EditType";
 
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
   const [episodeDropdown, setEpisodeDropdown] = useState([{ value: null, label:'Null' }]);
   const [subscriptionToEdit, setSubscriptionToEdit] = useState();
   const [genreToEdit, setGenreToEdit] = useState();
-  const [contentToEdit, setContentToEdit] = useState();
 
   const editCustomer = e => {
     const { name, value } = e.target;
@@ -58,11 +56,6 @@ function App() {
     setGenreToEdit(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const editContent = e => {
-    const { name, value } = e.target;
-    setContentToEdit(prevState => ({ ...prevState, [name]: value }));
-  };
-
   return (
     <Router>
       {/* this part should be changed into a component named linkComponent */}
@@ -84,8 +77,8 @@ function App() {
           <Route path="/genres" element={<Genres setGenreToEdit={setGenreToEdit}/>}> </Route>
           <Route path="/genres/:genreID" element={<EditGenre genre={genreToEdit} handleChange={editGenre} />}> </Route>
           
-          <Route path="/types" element={<ContentTypes setContentToEdit={setContentToEdit}/>}> </Route>
-          <Route path="/types/:typeID" element={<EditType content={contentToEdit} handleChange={editContent}/>}> </Route>
+          <Route path="/types" element={<ContentTypes />}> </Route>
+
         </Routes>
         {/* There's a way to do this with nested routes and <Outlet />
         components, but we'd need to do a little restructuring... EJ */}

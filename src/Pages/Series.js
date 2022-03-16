@@ -66,7 +66,7 @@ export default function Series( { setSeriesToEdit }) {
     const editSeries = async (seriesToEdit) => {
         setSeriesToEdit(seriesToEdit);
         let url = `/series/${seriesToEdit.seriesID}`;
-        navigate(url);
+        navigate(url, {state: {id: seriesToEdit.seriesID}});
     }
 
     const deleteSeries = async (_id) => {

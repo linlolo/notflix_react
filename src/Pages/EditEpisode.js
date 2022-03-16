@@ -12,8 +12,8 @@ function EditEpisode({ episode, handleChange, episodeDropdown }) {
 
     const updateEpisode = async () => {
         episode.episodeID = state.id;
+        console.log(episode);
         for (const field of Object.values(episode)) {
-            console.log(field);
             if (field === "") {
                 alert(`Please enter all fields`)
                 return;

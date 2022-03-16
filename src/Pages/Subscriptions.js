@@ -35,6 +35,7 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
                 return;
             }
         }
+        if (subscription['dateSubscribed'] === "") delete subscription['dateSubscribed'];
         const response = await fetch(`${API}/subscriptions`, {
             method: 'POST',
             body: JSON.stringify(subscription),
@@ -60,7 +61,7 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
                 header[key] = value;
             }
         }
-        url += '?' + (new URLSearchParams(header)).toString()
+        url += '?' + (new URLSearchParams(header)).toString();
         const response = await fetch(url);
         const data = await response.json();
         setSubscriptions(data.subscriptions);

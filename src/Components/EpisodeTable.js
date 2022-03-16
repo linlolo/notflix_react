@@ -32,7 +32,7 @@ function Episode({ episode, onDelete, onEdit }) {
     return (
         <tr>
             <td><GrEdit class="button" onClick={() => onEdit(episode)}/></td>
-            <td><GrTrash class="button" onClick={() => onDelete(episode)}/></td>
+            <td><GrTrash class="button" onClick={() => onDelete(episode.episodeID)}/></td>
             <td>{episode.seriesID}</td>
             <td>{episode.episodeID}</td>
             <td>{episode.episodeTitle}</td>

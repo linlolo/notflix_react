@@ -32,7 +32,7 @@ export default function SeriesForm( {series, handleChange} ) {
                             id="contentRating"
                             value={series.contentRating}
                             onChange={handleChange} >
-                            <option value={null} selected> Select </option>
+                            <option value="" selected> Select </option>
                             <option value="G: General Audience" > G: General Audience </option>
                             <option value="PG: Parental Guidance Suggested"> PG: Parental Guidance Suggested </option>
                             <option value="PG13: Parents Strongly Cautioned"> PG13: Parental Guidance Strongly Cautioned </option>

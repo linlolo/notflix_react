@@ -46,7 +46,7 @@ export default function Customers( { setCustomerToEdit } ) {
         } else {
             alert(`Failed to add customer, status code = ${response.status}`);
         }
-        setCustomers(response.customers);
+        loadCustomers();
     }
 
     const filterCustomers = async () => {
