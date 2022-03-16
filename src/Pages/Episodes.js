@@ -73,7 +73,6 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
     }
 
     const deleteEpisode = async (_id) => {
-        console.log(_id);
         const response = await fetch(`${API}/episodes/${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
             alert('Successfully deleted episode');
@@ -94,15 +93,11 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         setEpisodeDropdown(tempList);
     }
 
-    useEffect( async () => {
-        await loadEpisodes();
+    useEffect(() => {
+        loadEpisodes();
     }, [])
 
-    // useEffect(async () => {
-    //     await getSeriesEpisodes(episode.seriesID);
-    // }, [episode.seriesID])
-
-    return (
+    return(
         <div className="page">
             <h2>Episode Management</h2>
             <EpisodeForm episode={episode} handleChange={handleChange} episodeDropdown={episodeDropdown}/>

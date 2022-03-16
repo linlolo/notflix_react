@@ -2,9 +2,6 @@ import React from "react";
 import SeriesForm from "../Components/SeriesForm";
 import { useNavigate, useLocation } from 'react-router-dom';
 import {API} from '../Components/api';
-// page to edit an existing Series.
-// Pre-populate fields for `title`, `contentRating`.
-// Table below to add/delete Series.
 
 function EditSeries({ series, handleChange }) {
     const navigate = useNavigate();
@@ -18,7 +15,6 @@ function EditSeries({ series, handleChange }) {
                 return;
             };
         };
-        console.log(series);
         let url = `${API}/series/${series.seriesID}`
         const response = await fetch(url, {
             method: 'PUT',

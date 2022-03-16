@@ -1,4 +1,3 @@
-import "../App.css";
 import React from "react";
 import GenreForm from "../Components/GenreForm";
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -32,7 +31,7 @@ export default function EditGenre({ genre, handleChange }) {
         navigate('/genres')
     }
 
-    return (
+    return(
         <div className="page">
             <h3>Edit Genre Details:</h3>
             <p>Note: Genre ID cannot be changed.</p>

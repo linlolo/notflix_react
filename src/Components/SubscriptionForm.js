@@ -1,7 +1,4 @@
-import "../App.css";
 import React from "react";
-// Same form can be used for add, search, or edit
-// Only pre-populate fields if useParams passes a subscriptionID.
 
 export default function SubscriptionForm({ subscription, handleChange }) {
     return(

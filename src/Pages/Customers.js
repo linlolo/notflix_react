@@ -1,4 +1,3 @@
-import '../App.css';
 import React from "react";
 import CustomerForm from "../Components/CustomerForm";
 import CustomerTable from "../Components/CustomerTable";
@@ -83,7 +82,7 @@ export default function Customers( { setCustomerToEdit } ) {
         loadCustomers();
     }, [])
 
-    return (
+    return(
         <div className="page">
             <h2>Customer Management</h2>
             <CustomerForm customer={customer} handleChange={handleChange}/>

@@ -1,8 +1,7 @@
-import "../App.css";
 import React from "react";
 
 export default function ContentTypesForm( { content, handleChange }) {
-    return (
+    return(
         <form>
             <div className="formField">
                 <label htmlFor="seriesID">Series ID:</label>

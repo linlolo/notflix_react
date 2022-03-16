@@ -1,4 +1,3 @@
-import "../App.css";
 import React from "react";
 import {GrEdit, GrTrash} from "react-icons/gr";
 
@@ -27,8 +26,8 @@ export default function CustomerTable({ customers, onDelete, onEdit }) {
 function Customer({ customer, onDelete, onEdit }) {
     return (
         <tr>
-            <td><GrEdit class='button' onClick={() => onEdit(customer)}/></td>
-            <td><GrTrash class='button' onClick={() => onDelete(customer.customerID)}/></td>
+            <td><GrEdit className='button' onClick={() => onEdit(customer)}/></td>
+            <td><GrTrash className='button' onClick={() => onDelete(customer.customerID)}/></td>
             <td>{customer.customerID}</td>
             <td>{customer.firstName}</td>
             <td>{customer.lastName}</td>

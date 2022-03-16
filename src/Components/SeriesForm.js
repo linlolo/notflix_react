@@ -1,8 +1,7 @@
-import "../App.css";
 import React from "react";
 
 export default function SeriesForm( {series, handleChange} ) {
-    return (
+    return(
         <div>
             <form>
                 <div className="formField">

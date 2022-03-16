@@ -2,9 +2,6 @@ import React from "react";
 import CustomerForm from "../Components/CustomerForm";
 import { useNavigate, useLocation } from 'react-router-dom';
 import {API} from '../Components/api';
-// page to edit an existing Customer. Pre-populate fields for `firstName`,
-// `lastName`, `email`.
-// Table below to add/delete Subscriptions.
 
 function EditCustomer({ customer, handleChange }) {
     const navigate = useNavigate();

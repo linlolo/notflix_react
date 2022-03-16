@@ -1,4 +1,3 @@
-import "../App.css";
 import React from "react";
 import ContentTypesForm from "../Components/ContentTypesForm";
 import ContentTypesTable from "../Components/ContentTypesTable";
@@ -22,7 +21,6 @@ export default function ContentTypes() {
         const response = await fetch(`${API}/contents`);
         const data = await response.json();
         setContents(data.contentTypes);
-        console.log(data.contentTypes);
     }
 
     const addContent = async () => {
@@ -47,7 +45,6 @@ export default function ContentTypes() {
         } else {
             alert(`Failed to add content, status code = ${response.status}`);
         }
-        console.log(response);
         loadContents();
     }
 
@@ -84,7 +81,7 @@ export default function ContentTypes() {
         loadContents();
     }, [])
 
-    return (
+    return(
         <div className="page">
             <h2>ContentType Management:</h2>
             <p>Note: Only Series ID and Genre ID are required to add entry</p>

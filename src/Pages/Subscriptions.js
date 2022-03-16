@@ -1,4 +1,3 @@
-import "../App.css";
 import React from "react";
 import SubscriptionForm from "../Components/SubscriptionForm";
 import SubscriptionTable from "../Components/SubscriptionTable";
@@ -93,7 +92,7 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
         loadSubscriptions();
     }, [])
 
-    return (
+    return(
         <div className="page">
             <h2>Subscription Management</h2>
             <SubscriptionForm subscription={subscription} handleChange={handleChange} />

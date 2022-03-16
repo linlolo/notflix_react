@@ -2,9 +2,6 @@ import React from "react";
 import EpisodeForm from "../Components/EpisodeForm";
 import { useNavigate, useLocation } from 'react-router-dom';
 import {API} from '../Components/api';
-// page to edit an existing Episode.
-// Pre-populate fields for `seriesID`, `episodeTitle`, `releaseDate`,
-// `previousEpisode`, `nextEpisode`, `fileSource`.
 
 function EditEpisode({ episode, handleChange, episodeDropdown }) {
     const navigate = useNavigate();
@@ -12,7 +9,6 @@ function EditEpisode({ episode, handleChange, episodeDropdown }) {
 
     const updateEpisode = async () => {
         episode.episodeID = state.id;
-        console.log(episode);
         for (const field of Object.values(episode)) {
             if (field === "") {
                 alert(`Please enter all fields`)

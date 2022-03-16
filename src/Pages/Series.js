@@ -1,4 +1,3 @@
-import '../App.css';
 import React from "react";
 import SeriesForm from "../Components/SeriesForm";
 import SeriesTable from "../Components/SeriesTable";
@@ -83,7 +82,7 @@ export default function Series( { setSeriesToEdit }) {
         loadSeries();
     }, [])
 
-    return (
+    return(
         <div className="page">
             <h2>Series Management</h2>
             <SeriesForm series={oneSeries} handleChange={handleChange}/>

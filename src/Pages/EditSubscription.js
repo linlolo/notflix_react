@@ -1,4 +1,3 @@
-import "../App.css";
 import React from "react";
 import SubscriptionForm from "../Components/SubscriptionForm";
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -10,7 +9,6 @@ export default function EditSubscription({ subscription, handleChange }) {
 
     const updateSubscription = async () => {
         subscription.subscriptionID = state.id;
-        console.log(subscription)
         for (const field of Object.values(subscription)) {
             if (field === "") {
                 alert(`Please enter all fields`)

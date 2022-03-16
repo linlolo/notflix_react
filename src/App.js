@@ -1,5 +1,3 @@
-import './App.css';
-
 import React from "react";
 import {
   HashRouter as Router,
@@ -56,7 +54,7 @@ function App() {
     setGenreToEdit(prevState => ({ ...prevState, [name]: value }));
   };
 
-  return (
+  return(
     <Router>
       {/* this part should be changed into a component named linkComponent */}
       <header>

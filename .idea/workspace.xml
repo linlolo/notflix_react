@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Subject line (try to keep under 50 characters)&#10;&#10;Multi-line description of commit,&#10;feel free to be detailed.&#10;&#10;[Ticket: X]&#10;&#10;# F2 to save, F4 to close and finish commit.">
+    <list default="true" id="8f1c059c-380d-457f-aba9-388df8a40975" name="Changes" comment="Removed Series defaultValue entirely&#10;&#10;It was generating CORS errors&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +68,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="MTHome" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -277,7 +280,35 @@
       <option name="project" value="LOCAL" />
       <updated>1647375414637</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Re-fixed form fields&#10;&#10;Removed `selected` identifiers in favor of&#10;`defaultValue`.&#10;&#10;Changed `class` to `className` in all table element components.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1647445142357</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1647445142357</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Fixed Genre table components&#10;&#10;Missed in last commit.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1647445248155</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1647445248155</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Changed Series contentRating to `defaultValue`&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1647445743871</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1647445743871</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Removed Series defaultValue entirely&#10;&#10;It was generating CORS errors&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit.">
+      <created>1647446298011</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1647446298011</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,10 +326,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implement main App.js Router&#10;&#10;TODO: Build out Home, Customer Mgmt, and &#10;Content Mgmt sections&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <MESSAGE value="Create framework for Home page&#10;&#10;Updated meta and title info on index.html as well.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <MESSAGE value="Mockup Customers.js page&#10;&#10;No functionality yet.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <MESSAGE value="Finish mockup of Customers.js&#10;&#10;Added a mockup search results table and edit/delete icons.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Added 'AddCustomers' page.&#10;&#10;Fixed routing on App.js page.&#10;Added Email field on Customers.js under search.&#10;&#10;TODO: Consider breaking pages into smaller components and using &#10;&lt;Outlet /&gt; elements from react-router-dom?&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Added Search for Series form.&#10;&#10;Also created dummy &quot;search results&quot; tables.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Added Edit Customer and Edit Series pages.&#10;&#10;Updated links to be more consistently-named&#10;and RESTful-ready in App.js&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
@@ -320,6 +347,10 @@
     <MESSAGE value="Fixed some Edit issues.&#10;&#10;Not sure why edit-individual-item isn't rendering in correctly yet...&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Fixed episode dropdown issue&#10;&#10;Got it working - Javascript oddities&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
     <MESSAGE value="Removed an extra console.log() statement.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed an extra console.log() statement.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Re-fixed form fields&#10;&#10;Removed `selected` identifiers in favor of&#10;`defaultValue`.&#10;&#10;Changed `class` to `className` in all table element components.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Fixed Genre table components&#10;&#10;Missed in last commit.&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Changed Series contentRating to `defaultValue`&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <MESSAGE value="Removed Series defaultValue entirely&#10;&#10;It was generating CORS errors&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Series defaultValue entirely&#10;&#10;It was generating CORS errors&#10;&#10;EJL&#10;&#10;# F2 to save, F4 to close and finish commit." />
   </component>
 </project>

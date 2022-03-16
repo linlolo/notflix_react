@@ -1,11 +1,7 @@
-import "../App.css";
 import React from "react";
-// Form for add / search / edit customers.
-// Prepopulate all fields for Edit, otherwise default to empty strings
-// and "Leave blank" note for create new.
 
 export default function CustomerForm( { customer, handleChange } ) {
-    return (
+    return(
         <form className="customerSearchForm">
             <div className="formField">
                 <label for="customerID">Customer ID:</label>
