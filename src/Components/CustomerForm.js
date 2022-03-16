@@ -8,7 +8,21 @@ export default function CustomerForm( { customer, handleChange } ) {
     return (
         <form className="customerSearchForm">
             <div className="formField">
+<<<<<<< HEAD
                 <label htmlFor="firstName">First Name:</label>
+=======
+                <label for="customerID">Customer ID:</label>
+                    <input
+                        type="text"
+                        id="customerID"
+                        name="customerID"
+                        value={customer.customerID}
+                        placeholder="Leave blank to create new Customer"
+                        onChange={ handleChange } />
+            </div>
+            <div className="formField">
+                <label for="firstName">First Name:</label>
+>>>>>>> updateDelete
                     <input
                         type="text"
                         id="firstName"

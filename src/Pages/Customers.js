@@ -8,7 +8,8 @@ import {API} from '../Components/api';
 
 export default function Customers( { setCustomerToEdit } ) {
     const [customers, setCustomers] = useState([]);
-    const [customer, setCustomer] = useState({ customerID: "", firstName: "", lastName: "", email: "" });
+    const [customer, setCustomer] = useState({});
+    const reqFields = ['firstName', 'lastName', 'email'];
     
     const navigate = useNavigate();
 
@@ -27,6 +28,12 @@ export default function Customers( { setCustomerToEdit } ) {
     }
 
     const addCustomer = async () => {
+        for (const field of reqFields) {
+            if (!(field in customer) || (customer[field] === "")) {
+                alert('Please enter all required fields');
+                return;
+            }
+        }
         const response = await fetch(`${API}/customers`, {
             method: 'POST',
             body: JSON.stringify(customer),
@@ -59,7 +66,7 @@ export default function Customers( { setCustomerToEdit } ) {
     const editCustomer = async (customerToEdit) => {
         setCustomerToEdit(customerToEdit);
         let url = `/customers/${customerToEdit.customerID}`;
-        navigate(url);
+        navigate(url, {state: {id: customerToEdit.customerID}});
     }
 
     const deleteCustomer = async (_id) => {

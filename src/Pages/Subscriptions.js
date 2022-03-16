@@ -9,8 +9,9 @@ import moment from "moment";
 
 export default function Subscriptions( {setSubscriptionToEdit }) {
     const [subscriptions, setSubscriptions] = useState([]);
-    const [subscription, setSubscription] = useState({ subscriptionID: "", customerID: "", firstName: "", lastName: "", seriesID: "", title: "", dateSubscribed: "" });
-
+    const [subscription, setSubscription] = useState({});
+    const reqFields = [ 'customerID', 'seriesID' ];
+    
     const navigate = useNavigate();
 
     const handleChange = e => {
@@ -28,7 +29,17 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
     }
 
     const addSubscription = async () => {
+<<<<<<< HEAD
         const response = await fetch(`${API}/subscriptions`, {
+=======
+        for (const field of reqFields) {
+            if (!(field in subscription) || (subscription[field] === "")) {
+                alert('Please enter all required fields');
+                return;
+            }
+        }
+        const response = await fetch('/subscriptions', {
+>>>>>>> updateDelete
             method: 'POST',
             body: JSON.stringify(subscription),
             headers: {
@@ -37,6 +48,8 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
         });
         if (response.status === 201) {
             alert("Successfully added the subscription");
+        } else if (response.status === 500) {
+            alert("Please enter an existing Series and/or Customer ID");
         } else {
             alert(`Failed to add subscription, status code = ${response.status}`);
         }
@@ -59,9 +72,14 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
 
     const editSubscription = async (subscriptionToEdit) => {
         subscriptionToEdit.dateSubscribed = moment(subscriptionToEdit.dateSubscribed).format("YYYY-MM-DD")
-        setSubscriptionToEdit(subscriptionToEdit);
+        setSubscriptionToEdit({
+            'subscriptionID': subscriptionToEdit.subscriptionID,
+            'customerID': subscriptionToEdit.customerID,
+            'seriesID': subscriptionToEdit.seriesID,
+            'dateSubscribed': subscriptionToEdit.dateSubscribed
+        });
         let url = `/subscriptions/${subscriptionToEdit.subscriptionID}`;
-        navigate(url);
+        navigate(url, {state: {id: subscriptionToEdit.subscriptionID}});
     }
 
     const deleteSubscription = async (_id) => {

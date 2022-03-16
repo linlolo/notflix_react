@@ -1,6 +1,6 @@
 import React from "react";
 import CustomerForm from "../Components/CustomerForm";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {API} from '../Components/api';
 // page to edit an existing Customer. Pre-populate fields for `firstName`,
 // `lastName`, `email`.
@@ -8,8 +8,16 @@ import {API} from '../Components/api';
 
 function EditCustomer({ customer, handleChange }) {
     const navigate = useNavigate();
-
+    const { state } = useLocation();
+    
     const updateCustomer = async () => {
+        customer.customerID = state.id;
+        for (const field of Object.values(customer)) {
+            if (field === "") {
+                alert(`Please enter all fields`)
+                return;
+            };
+        };
         let url = `${API}/customers/${customer.customerID}`
         const response = await fetch(url, {
             method: 'PUT',

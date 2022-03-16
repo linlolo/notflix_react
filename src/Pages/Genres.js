@@ -8,7 +8,8 @@ import {API} from '../Components/api';
 
 export default function Genres( { setGenreToEdit }) {
     const [genres, setGenres] = useState([]);
-    const [genre, setGenre] = useState({ genreID: "", genreName: "" });
+    const [genre, setGenre] = useState({});
+    const reqFields = [ 'genreName' ];
 
     const navigate = useNavigate();
 
@@ -27,7 +28,17 @@ export default function Genres( { setGenreToEdit }) {
     }
 
     const addGenre = async () => {
+<<<<<<< HEAD
         const response = await fetch(`${API}/genres`, {
+=======
+        for (const field of reqFields) {
+            if (!(field in genre) || (genre[field] === "")) {
+                alert('Please enter all required fields');
+                return;
+            }
+        }
+        const response = await fetch('/genres', {
+>>>>>>> updateDelete
             method: 'POST',
             body: JSON.stringify(genre),
             headers: {
@@ -59,7 +70,7 @@ export default function Genres( { setGenreToEdit }) {
     const editGenre = async (genreToEdit) => {
         setGenreToEdit(genreToEdit);
         let url = `/genres/${genreToEdit.genreID}`;
-        navigate(url);
+        navigate(url, {state: {id: genreToEdit.genreID}});
     }
 
     const deleteGenre = async (_id) => {
