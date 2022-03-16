@@ -29,17 +29,13 @@ export default function Subscriptions( {setSubscriptionToEdit }) {
     }
 
     const addSubscription = async () => {
-<<<<<<< HEAD
-        const response = await fetch(`${API}/subscriptions`, {
-=======
         for (const field of reqFields) {
             if (!(field in subscription) || (subscription[field] === "")) {
                 alert('Please enter all required fields');
                 return;
             }
         }
-        const response = await fetch('/subscriptions', {
->>>>>>> updateDelete
+        const response = await fetch(`${API}/subscriptions`, {
             method: 'POST',
             body: JSON.stringify(subscription),
             headers: {

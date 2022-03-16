@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import "../App.css";
-import React, {useCallback} from "react";
-=======
 import React from "react";
->>>>>>> updateDelete
 import EpisodeForm from "../Components/EpisodeForm";
 import EpisodeTable from "../Components/EpisodeTable";
 import { useState, useEffect } from 'react';
@@ -32,12 +27,7 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
     }
 
     const addEpisode = async () => {
-<<<<<<< HEAD
         const response = await fetch(`${API}/episodes`, {
-=======
-        console.log(episode);
-        const response = await fetch('/episodes', {
->>>>>>> updateDelete
             method: 'POST',
             body: JSON.stringify(episode),
             headers: {
@@ -95,18 +85,8 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         setEpisodeDropdown(tempList);
     }
 
-<<<<<<< HEAD
     useEffect( async () => {
         await loadEpisodes();
-=======
-    const loadSeriesEpisodes = async () => {
-
-    }
-
-    useEffect(() => {
-        loadEpisodes();
-        loadSeriesEpisodes();
->>>>>>> updateDelete
     }, [])
 
     useEffect(async () => {

@@ -28,18 +28,13 @@ export default function Series( { setSeriesToEdit }) {
     }
 
     const addSeries = async () => {
-<<<<<<< HEAD
-        const newSeries = oneSeries;
-        const response = await fetch(`${API}/series`, {
-=======
         for (const field of reqFields) {
             if (!(field in oneSeries) || (oneSeries[field] === "")) {
                 alert('Please enter all required fields');
                 return;
             }
         }
-        const response = await fetch('/series', {
->>>>>>> updateDelete
+        const response = await fetch(`${API}/series`, {
             method: 'POST',
             body: JSON.stringify(oneSeries),
             headers: {

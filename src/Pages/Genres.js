@@ -28,17 +28,13 @@ export default function Genres( { setGenreToEdit }) {
     }
 
     const addGenre = async () => {
-<<<<<<< HEAD
-        const response = await fetch(`${API}/genres`, {
-=======
         for (const field of reqFields) {
             if (!(field in genre) || (genre[field] === "")) {
                 alert('Please enter all required fields');
                 return;
             }
         }
-        const response = await fetch('/genres', {
->>>>>>> updateDelete
+        const response = await fetch(`${API}/genres`, {
             method: 'POST',
             body: JSON.stringify(genre),
             headers: {

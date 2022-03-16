@@ -1,11 +1,7 @@
 import React from "react";
 import SeriesForm from "../Components/SeriesForm";
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom';
-import {API} from '../Components/api';
-=======
 import { useNavigate, useLocation } from 'react-router-dom';
->>>>>>> updateDelete
+import {API} from '../Components/api';
 // page to edit an existing Series.
 // Pre-populate fields for `title`, `contentRating`.
 // Table below to add/delete Series.
@@ -15,9 +11,6 @@ function EditSeries({ series, handleChange }) {
     const state = useLocation();
 
     const updateSeries = async () => {
-<<<<<<< HEAD
-        let url = `${API}/series/${series.seriesID}`
-=======
         series.seriesID = state.id;
         for (const field of Object.values(series)) {
             if (field === "") {
@@ -25,8 +18,7 @@ function EditSeries({ series, handleChange }) {
                 return;
             };
         };
-        let url = `/series/${series.seriesID}`
->>>>>>> updateDelete
+        let url = `${API}/series/${series.seriesID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(series),

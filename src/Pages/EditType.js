@@ -1,21 +1,14 @@
 import "../App.css";
 import React from "react";
 import ContentTypesForm from "../Components/ContentTypesForm";
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom';
-import {API} from '../Components/api';
-=======
 import { useNavigate, useLocation } from 'react-router-dom';
->>>>>>> updateDelete
+import {API} from '../Components/api';
 
 export default function EditType({ content, handleChange }) {
     const navigate = useNavigate();
     const state = useLocation();
     
     const updateContent = async () => {
-<<<<<<< HEAD
-        let url = `${API}/contents/${content.contentTypeID}`
-=======
         content.episodeID = state.id;
         for (const field of Object.values(content)) {
             console.log(field);
@@ -24,8 +17,7 @@ export default function EditType({ content, handleChange }) {
                 return;
             };
         };
-        let url = `/contents/${content.contentTypeID}`
->>>>>>> updateDelete
+        let url = `${API}/contents/${content.contentTypeID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(content),

@@ -1,21 +1,14 @@
 import "../App.css";
 import React from "react";
 import SubscriptionForm from "../Components/SubscriptionForm";
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom';
-import {API} from '../Components/api';
-=======
 import { useNavigate, useLocation } from 'react-router-dom';
->>>>>>> updateDelete
+import {API} from '../Components/api';
 
 export default function EditSubscription({ subscription, handleChange }) {
     const navigate = useNavigate();
     const { state } = useLocation();
 
     const updateSubscription = async () => {
-<<<<<<< HEAD
-        let url = `${API}/subscriptions/${subscription.subscriptionID}`
-=======
         subscription.subscriptionID = state.id;
         console.log(subscription)
         for (const field of Object.values(subscription)) {
@@ -24,8 +17,7 @@ export default function EditSubscription({ subscription, handleChange }) {
                 return;
             };
         };
-        let url = `/subscriptions/${subscription.subscriptionID}`
->>>>>>> updateDelete
+        let url = `${API}/subscriptions/${subscription.subscriptionID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(subscription),

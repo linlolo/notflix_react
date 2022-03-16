@@ -1,21 +1,14 @@
 import "../App.css";
 import React from "react";
 import GenreForm from "../Components/GenreForm";
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom';
-import {API} from '../Components/api';
-=======
 import { useNavigate, useLocation } from 'react-router-dom';
->>>>>>> updateDelete
+import {API} from '../Components/api';
 
 export default function EditGenre({ genre, handleChange }) {
     const navigate = useNavigate();
     const { state } = useLocation();
 
     const updateGenre = async () => {
-<<<<<<< HEAD
-        let url = `${API}/genres/${genre.genreID}`
-=======
         genre.genreID = state.id;
         for (const field of Object.values(genre)) {
             if (field === "") {
@@ -23,8 +16,7 @@ export default function EditGenre({ genre, handleChange }) {
                 return;
             };
         };
-        let url = `/genres/${genre.genreID}`
->>>>>>> updateDelete
+        let url = `${API}/genres/${genre.genreID}`
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(genre),
