@@ -18,7 +18,7 @@ export default function SeriesForm( {series, handleChange} ) {
                 <div className="formField">
                     <label htmlFor="contentRating">Rating:</label>
                         <select
-                            name="Content Rating"
+                            name="contentRating"
                             id="contentRating"
                             onChange={handleChange} >
                             <option value ="G" > G: General Audience </option>
