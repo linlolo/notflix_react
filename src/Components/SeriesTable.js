@@ -29,7 +29,7 @@ function Series({ series, onEdit, onDelete }) {
             <td><GrEdit class='button' onClick={() => onEdit(series)}/></td>
             <td><GrTrash class='button' onClick={() => onDelete(series.seriesID)}/></td>
             <td>{series.seriesID}</td>
-            <td>{series.title}</td>
+            <td>{series.seriesTitle}</td>
             <td>{series.contentRating}</td>
         </tr>
     )

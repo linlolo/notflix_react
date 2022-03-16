@@ -1,12 +1,21 @@
 import "../App.css";
 import React from "react";
 import SubscriptionForm from "../Components/SubscriptionForm";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function EditSubscription({ subscription, handleChange }) {
     const navigate = useNavigate();
+    const { state } = useLocation();
 
     const updateSubscription = async () => {
+        subscription.subscriptionID = state.id;
+        console.log(subscription)
+        for (const field of Object.values(subscription)) {
+            if (field === "") {
+                alert(`Please enter all fields`)
+                return;
+            };
+        };
         let url = `/subscriptions/${subscription.subscriptionID}`
         const response = await fetch(url, {
             method: 'PUT',

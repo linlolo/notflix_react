@@ -15,7 +15,7 @@ export default function CustomerForm( { customer, handleChange } ) {
                         name="customerID"
                         value={customer.customerID}
                         placeholder="Leave blank to create new Customer"
-                        onChange={handleChange} />
+                        onChange={ handleChange } />
             </div>
             <div className="formField">
                 <label for="firstName">First Name:</label>

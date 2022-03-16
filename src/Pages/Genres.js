@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Genres( { setGenreToEdit }) {
     const [genres, setGenres] = useState([]);
-    const [genre, setGenre] = useState({ genreID: "", genreName: "" });
+    const [genre, setGenre] = useState({});
+    const reqFields = [ 'genreName' ];
 
     const navigate = useNavigate();
 
@@ -26,6 +27,12 @@ export default function Genres( { setGenreToEdit }) {
     }
 
     const addGenre = async () => {
+        for (const field of reqFields) {
+            if (!(field in genre) || (genre[field] === "")) {
+                alert('Please enter all required fields');
+                return;
+            }
+        }
         const response = await fetch('/genres', {
             method: 'POST',
             body: JSON.stringify(genre),
@@ -53,13 +60,12 @@ export default function Genres( { setGenreToEdit }) {
         const response = await fetch(url);
         const data = await response.json();
         setGenres(data.genres);
-        loadGenres();
     }
 
     const editGenre = async (genreToEdit) => {
         setGenreToEdit(genreToEdit);
         let url = `/genres/${genreToEdit.genreID}`;
-        navigate(url);
+        navigate(url, {state: {id: genreToEdit.genreID}});
     }
 
     const deleteGenre = async (_id) => {

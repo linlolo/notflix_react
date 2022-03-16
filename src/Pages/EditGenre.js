@@ -1,12 +1,20 @@
 import "../App.css";
 import React from "react";
 import GenreForm from "../Components/GenreForm";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function EditGenre({ genre, handleChange }) {
     const navigate = useNavigate();
+    const { state } = useLocation();
 
     const updateGenre = async () => {
+        genre.genreID = state.id;
+        for (const field of Object.values(genre)) {
+            if (field === "") {
+                alert(`Please enter all fields`)
+                return;
+            };
+        };
         let url = `/genres/${genre.genreID}`
         const response = await fetch(url, {
             method: 'PUT',

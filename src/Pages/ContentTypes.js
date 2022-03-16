@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function ContentTypes({ setContentToEdit }) {
     const [contents, setContents] = useState([]);
-    const [content, setContent] = useState({ contentTypeID: "", seriesID: "", title: "", genreID: "", genreName: "" });
+    const [content, setContent] = useState({});
 
     const navigate = useNavigate();
 
@@ -28,7 +28,10 @@ export default function ContentTypes({ setContentToEdit }) {
     const addContent = async () => {
         const response = await fetch('/contents', {
             method: 'POST',
-            body: JSON.stringify(content),
+            body: JSON.stringify({
+                'seriesID': content.seriesID,
+                'genreID': content.genreID,
+            }),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -53,13 +56,12 @@ export default function ContentTypes({ setContentToEdit }) {
         const response = await fetch(url);
         const data = await response.json();
         setContents(data.contents);
-        loadContents();
     }
 
     const editContent = async (contentToEdit) => {
         setContentToEdit(contentToEdit);
         let url = `/contents/${contentToEdit.contentID}`;
-        navigate(url);
+        navigate(url, {state: {id: contentToEdit.contentID}});
     }
 
     const deleteContent = async (_id) => {

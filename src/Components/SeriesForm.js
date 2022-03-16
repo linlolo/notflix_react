@@ -2,7 +2,7 @@ import "../App.css";
 import React from "react";
 
 export default function SeriesForm( {series, handleChange} ) {
-    return(
+    return (
         <div>
             <form>
                 <div className="formField">
@@ -16,24 +16,26 @@ export default function SeriesForm( {series, handleChange} ) {
                             onChange={handleChange} />
                 </div>
                 <div className="formField">
-                    <label for="title">Title:</label>
+                    <label for="seriesTitle">Title:</label>
                         <input
                             type="text"
-                            id="title"
-                            name="title"
-                            value={series.title}
+                            id="seriesTitle"
+                            name="seriesTitle"
+                            value={series.seriesTitle}
                             placeholder="The Bandalorian"
                             onChange={handleChange} />
                 </div>
                 <div className="formField">
                     <label for="contentRating">Rating:</label>
                         <select
-                            name="Content Rating"
+                            name="contentRating"
                             id="contentRating"
+                            value={series.contentRating}
                             onChange={handleChange} >
-                            <option value ="G: General Audience" > G: General Audience </option>
+                            <option value={null} selected> Select </option>
+                            <option value="G: General Audience" > G: General Audience </option>
                             <option value="PG: Parental Guidance Suggested"> PG: Parental Guidance Suggested </option>
-                            <option value="PG13: Parents Strongly Cautioned" selected> PG13: Parental Guidance Strongly Cautioned </option>
+                            <option value="PG13: Parents Strongly Cautioned"> PG13: Parental Guidance Strongly Cautioned </option>
                             <option value="R: Restricted"> R: Restricted </option>
                             <option value="NC-17: Adults Only"> NC-17: Adults Only </option>
                         </select>

@@ -1,12 +1,21 @@
 import "../App.css";
 import React from "react";
 import ContentTypesForm from "../Components/ContentTypesForm";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function EditType({ content, handleChange }) {
     const navigate = useNavigate();
-
+    const state = useLocation();
+    
     const updateContent = async () => {
+        content.episodeID = state.id;
+        for (const field of Object.values(content)) {
+            console.log(field);
+            if (field === "") {
+                alert(`Please enter all fields`)
+                return;
+            };
+        };
         let url = `/contents/${content.contentTypeID}`
         const response = await fetch(url, {
             method: 'PUT',

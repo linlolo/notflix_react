@@ -1,4 +1,3 @@
-import "../App.css";
 import React from "react";
 import EpisodeForm from "../Components/EpisodeForm";
 import EpisodeTable from "../Components/EpisodeTable";
@@ -8,7 +7,7 @@ import moment from "moment";
 
 export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episodeDropdown }) {
     const [episodes, setEpisodes] = useState([]);
-    const [episode, setEpisode] = useState({ seriesID: "", episodeID: "", episodeTitle: "", releaseDate: "", prevEpisode: "", nextEpisode: "", fileSource: "" });
+    const [episode, setEpisode] = useState({});
 
     const navigate = useNavigate();
 
@@ -27,6 +26,7 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
     }
 
     const addEpisode = async () => {
+        console.log(episode);
         const response = await fetch('/episodes', {
             method: 'POST',
             body: JSON.stringify(episode),
@@ -54,7 +54,6 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         const response = await fetch(url);
         const data = await response.json();
         setEpisodes(data.episodes);
-        loadEpisodes();
     }
 
     const editEpisode = async (episodeToEdit) => {
@@ -62,7 +61,7 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
         getSeriesEpisodes(episodeToEdit.seriesID);
         setEpisodeToEdit(episodeToEdit);
         let url = `/episodes/${episodeToEdit.episodeID}`;
-        navigate(url);
+        navigate(url, {state: {id: episodeToEdit.episodeID}});
     }
 
     const deleteEpisode = async (_id) => {
@@ -90,8 +89,8 @@ export default function Episodes({ setEpisodeToEdit, setEpisodeDropdown, episode
 
     }
 
-    useEffect(async () => {
-        await loadEpisodes();
+    useEffect(() => {
+        loadEpisodes();
         loadSeriesEpisodes();
     }, [])
 

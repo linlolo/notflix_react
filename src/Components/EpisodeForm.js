@@ -2,7 +2,7 @@ import "../App.css";
 import React from "react";
 
 export default function EpisodeForm( {episode, handleChange, episodeDropdown}) {
-    return(
+    return (
         <form>
             <div className="formField">
                 <label for="seriesID">Series ID:</label>
@@ -63,14 +63,9 @@ export default function EpisodeForm( {episode, handleChange, episodeDropdown}) {
                     id="fileSource"
                     name="fileSource"
                     value={episode.fileSource}
-                    placeholder="chickynuggies.m4a" />
+                    placeholder="chickynuggies.m4a"
+                    onChange={handleChange} />
             </div>
         </form>
     );
-}
-
-function episodeDropdown({ }) {
-    return(
-        null
-    )
 }

@@ -7,8 +7,9 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Series( { setSeriesToEdit }) {
     const [series, setSeries] = useState([]);
-    const [oneSeries, setOneSeries] = useState({ seriesID: "", title: "", contentRating: "" });
-    
+    const [oneSeries, setOneSeries] = useState({});
+    const reqFields = ['seriesTitle', 'contentRating'];
+
     const navigate = useNavigate();
 
     const handleChange = e => {
@@ -26,10 +27,15 @@ export default function Series( { setSeriesToEdit }) {
     }
 
     const addSeries = async () => {
-        const newSeries = oneSeries;
+        for (const field of reqFields) {
+            if (!(field in oneSeries) || (oneSeries[field] === "")) {
+                alert('Please enter all required fields');
+                return;
+            }
+        }
         const response = await fetch('/series', {
             method: 'POST',
-            body: JSON.stringify(newSeries),
+            body: JSON.stringify(oneSeries),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -54,7 +60,6 @@ export default function Series( { setSeriesToEdit }) {
         const response = await fetch(url);
         const data = await response.json();
         setSeries(data.series);
-        loadSeries();
     }
 
     const editSeries = async (seriesToEdit) => {

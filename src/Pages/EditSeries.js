@@ -1,15 +1,22 @@
-import "../App.css";
 import React from "react";
 import SeriesForm from "../Components/SeriesForm";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 // page to edit an existing Series.
 // Pre-populate fields for `title`, `contentRating`.
-// Table below to add/delete Episodes.
+// Table below to add/delete Series.
 
 function EditSeries({ series, handleChange }) {
     const navigate = useNavigate();
+    const state = useLocation();
 
     const updateSeries = async () => {
+        series.seriesID = state.id;
+        for (const field of Object.values(series)) {
+            if (field === "") {
+                alert(`Please enter all fields`)
+                return;
+            };
+        };
         let url = `/series/${series.seriesID}`
         const response = await fetch(url, {
             method: 'PUT',
