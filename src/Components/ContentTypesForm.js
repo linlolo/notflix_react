@@ -17,9 +17,9 @@ export default function ContentTypesForm( { content, handleChange }) {
                 <label htmlFor="title">Series Title:</label>
                     <input
                         type="text"
-                        id="title"
-                        name="title"
-                        value={content.title}
+                        id="seriesTitle"
+                        name="seriesTitle"
+                        value={content.seriesTitle}
                         placeholder="Series Title"
                         onChange={handleChange} />
             </div>

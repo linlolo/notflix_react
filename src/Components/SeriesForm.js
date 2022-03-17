@@ -21,7 +21,7 @@ export default function SeriesForm( {series, handleChange} ) {
                             id="seriesTitle"
                             name="seriesTitle"
                             value={series.seriesTitle}
-                            placeholder="The Bandalorian"
+                            placeholder="Series Title"
                             onChange={handleChange} />
                 </div>
                 <div className="formField">
@@ -31,12 +31,12 @@ export default function SeriesForm( {series, handleChange} ) {
                             id="contentRating"
                             value={series.contentRating}
                             onChange={handleChange} >
-                            <option value="" selected> Select </option>
+                            <option value=""> Select </option>
                             <option value="G: General Audience" > G: General Audience </option>
                             <option value="PG: Parental Guidance Suggested"> PG: Parental Guidance Suggested </option>
                             <option value="PG13: Parents Strongly Cautioned"> PG13: Parental Guidance Strongly Cautioned </option>
                             <option value="R: Restricted"> R: Restricted </option>
-                            <option value="NC-17: Adults Only"> NC-17: Adults Only </option>
+                            <option value="NC17: Adults Only"> NC17: Adults Only </option>
                         </select>
                 </div>
             </form>

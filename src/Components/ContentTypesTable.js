@@ -26,8 +26,8 @@ export default function ContentTypesTable( { contents, onDelete, onEdit }) {
 function Content({ content, onDelete, onEdit }) {
     return(
         <tr>
-            <td><GrEdit class="button" onClick={() => onEdit()}/></td>
-            <td><GrTrash class="button" onClick={() => onDelete(content)}/></td>
+            <td><GrEdit className="button" onClick={() => onEdit()}/></td>
+            <td><GrTrash className="button" onClick={() => onDelete(content)}/></td>
             <td>{content.seriesID}</td>
             <td>{content.seriesTitle}</td>
             <td>{content.genreID}</td>

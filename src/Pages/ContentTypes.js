@@ -59,7 +59,7 @@ export default function ContentTypes() {
         url += '?' + (new URLSearchParams(header)).toString()
         const response = await fetch(url);
         const data = await response.json();
-        setContents(data.contents);
+        setContents(data.contentTypes);
     }
 
     const editContent = async () => {
